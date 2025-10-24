@@ -1,14 +1,13 @@
-﻿// E-Tech app.js (UTF-8)
-// Products are loaded from assets/data/products.json
+﻿// E‑Tech app.js (UTF‑8)
+// Chế độ giới thiệu: chỉ hiển thị sản phẩm, không mua hàng
 
 const store = {
   products: [],
-  cart: [],
 };
 
 // Helpers
 const isAssetImage = (src) => typeof src === 'string' && src.startsWith('assets/');
-const money = (n) => (n || 0).toLocaleString('vi-VN') + '₫';
+const money = (n) => (n || 0).toLocaleString('vi-VN') + '\u20ab';
 
 async function loadProducts() {
   try {
@@ -22,7 +21,6 @@ async function loadProducts() {
   }
 }
 
-// Card sản phẩm
 function productCard(p) {
   const media = isAssetImage(p.img)
     ? `<img src="${p.img}" alt="${p.title}" class="img-fluid w-100 h-100 object-fit-cover">`
@@ -37,9 +35,7 @@ function productCard(p) {
         <div class="p-meta">Danh mục: ${p.cat}</div>
         <div class="p-price">${money(p.price)}</div>
         ${old}
-        <img src="assets/img/new.png" alt="badge" class="sale" style="display:${(p.tags||[]).includes('new')?'block':'none'}">
         <div class="p-actions">
-          <button class="btn btn-warning btn-sm" data-add="${p.id}">Thêm</button>
           <button class="btn btn-ghost btn-sm" data-qv="${p.id}" data-bs-toggle="modal" data-bs-target="#quickView">Xem</button>
         </div>
       </div>
@@ -47,7 +43,6 @@ function productCard(p) {
   </div>`;
 }
 
-// Trang chủ
 function initHome() {
   if (typeof Swiper === 'function') {
     new Swiper('.hero-swiper', { loop: true, pagination: { el: '.swiper-pagination' }, autoplay: { delay: 3500 } });
@@ -63,13 +58,14 @@ function initHome() {
   mount('#grid-sale', (p) => (p.tags||[]).includes('sale'));
 
   document.body.addEventListener('click', (e) => {
-    const addId = e.target.getAttribute('data-add');
     const qvId = e.target.getAttribute('data-qv');
-    if (addId) { addToCart(+addId); toast('Đã thêm vào giỏ'); }
-    if (qvId) { quickView(+qvId); }
+    if (qvId) quickView(+qvId);
   });
 
-  // Countdown 48h
+  // Ẩn phần tử mua hàng nếu còn trong HTML
+  document.querySelectorAll('a[href="cart.html"], #cartCount, #cartCount2, #qvAdd, #addToCart')
+    .forEach(el => { if (el) el.style.display = 'none'; });
+
   const end = Date.now() + 48 * 3600 * 1000;
   const out = document.getElementById('clock');
   if (out) {
@@ -83,7 +79,6 @@ function initHome() {
   }
 }
 
-// Danh mục
 function initList() {
   const grid = document.getElementById('grid-all');
   if (!grid) return;
@@ -94,7 +89,7 @@ function initList() {
     const inStock = document.getElementById('inStock').checked;
     const sort = document.getElementById('sortSelect').value;
     let items = store.products.filter(p => (!cat || p.cat === cat) && p.price <= max);
-    if (inStock) items = items; // placeholder cho tồn kho thật
+    if (inStock) items = items;
     if (sort === 'priceAsc') items.sort((a,b)=>a.price-b.price);
     if (sort === 'priceDesc') items.sort((a,b)=>b.price-a.price);
     grid.innerHTML = items.slice(0, limit).map(productCard).join('');
@@ -104,48 +99,8 @@ function initList() {
   document.getElementById('sortSelect').onchange = render;
   document.getElementById('priceRange').oninput = (e)=>{ document.getElementById('priceLabel').textContent = e.target.value; };
   document.getElementById('loadMore').onclick = ()=>{ limit += 4; render(); };
-  document.body.addEventListener('click', (e)=>{ const id = e.target.getAttribute('data-add'); if(id){ addToCart(+id); toast('Đã thêm vào giỏ'); } });
 }
 
-// Giỏ hàng
-function initCart(){
-  const body = document.getElementById('cartBody');
-  if(!body) return;
-  const render = () => {
-    body.innerHTML = store.cart.map(item=>`
-      <tr>
-        <td>${item.title}</td>
-        <td>${money(item.price)}</td>
-        <td><input type="number" min="1" value="${item.qty}" data-qty="${item.id}" class="form-control form-control-sm" style="width:80px"></td>
-        <td>${money(item.price*item.qty)}</td>
-        <td><button class="btn btn-sm btn-outline-danger" data-remove="${item.id}">X</button></td>
-      </tr>
-    `).join('');
-    document.getElementById('subTotal').textContent = money(store.cart.reduce((s,i)=>s+i.price*i.qty,0));
-    syncCartCount();
-  };
-  render();
-  body.addEventListener('input', e=>{ const id = +e.target.getAttribute('data-qty'); const it = store.cart.find(i=>i.id===id); if(it){ it.qty = Math.max(1, +e.target.value||1); render(); } });
-  body.addEventListener('click', e=>{ const id = +e.target.getAttribute('data-remove'); if(id){ store.cart = store.cart.filter(i=>i.id!==id); render(); } });
-}
-
-function addToCart(id){
-  const p = store.products.find(x=>x.id===id);
-  if(!p) return;
-  const found = store.cart.find(i=>i.id===id);
-  if(found) found.qty += 1; else store.cart.push({...p, qty:1});
-  syncCartCount();
-  saveCart();
-}
-function syncCartCount(){
-  const n = store.cart.reduce((s,i)=>s+i.qty,0);
-  const el1 = document.getElementById('cartCount'); if(el1) el1.textContent = n;
-  const el2 = document.getElementById('cartCount2'); if(el2) el2.textContent = n;
-}
-function saveCart(){ localStorage.setItem('etech_cart', JSON.stringify(store.cart)); }
-function loadCart(){ try{ store.cart = JSON.parse(localStorage.getItem('etech_cart')||'[]'); }catch{ store.cart=[]; } }
-
-// Quick view
 function quickView(id){
   const p = store.products.find(x=>x.id===id); if(!p) return;
   const body = document.getElementById('qvBody'); if(!body) return;
@@ -162,16 +117,9 @@ function quickView(id){
         <p class="small">CPU i5 / RAM 16GB / SSD 512GB / Màn 15.6" 120Hz (thông số minh họa)</p>
       </div>
     </div>`;
+  const addBtn = document.getElementById('qvAdd'); if (addBtn) addBtn.style.display = 'none';
 }
 
-// Toast helper
-function toast(msg){
-  let host = document.querySelector('.toast-fixed');
-  if(!host){ host = document.createElement('div'); host.className='toast-fixed'; document.body.appendChild(host); }
-  const el = document.createElement('div'); el.className = 'alert alert-success py-2 px-3 shadow-sm'; el.textContent = msg; host.appendChild(el); setTimeout(()=>{ el.remove(); }, 1800);
-}
-
-// Dark mode toggle
 function initDark(){
   const btn = document.getElementById('btnDark'); if(!btn) return;
   const setTheme = (d)=>document.documentElement.setAttribute('data-bs-theme', d?'dark':'light');
@@ -179,9 +127,7 @@ function initDark(){
   btn.onclick = ()=>{ pref=!pref; localStorage.setItem('dm',pref?'1':'0'); setTheme(pref); };
 }
 
-// Boot
 document.addEventListener('DOMContentLoaded', ()=>{
-  loadCart(); syncCartCount(); initDark();
+  initDark();
   loadProducts().then(()=>{ initHome(); initList(); });
-  initCart();
 });
