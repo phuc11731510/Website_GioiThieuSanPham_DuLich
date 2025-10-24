@@ -1,14 +1,14 @@
 const store = {
   products: [
-    { id: 1, title: 'Laptop Lenovo Gaming Legion 5 15IRX10 - 83LY00A6VN', price: 32990000, oldprice: 35000000, cat: 'laptop', tags: ['new'], img: 'assets/img/legion-lenovo.png' },
-    { id: 2, title: 'Laptop Pro 16 OLED', price: 45990000, cat: 'laptop', tags: ['hot'], img: '💻' },
-    { id: 3, title: 'Tai nghe ANC Pro', price: 3990000, cat: 'audio', tags: ['sale'], img: '🎧' },
-    { id: 4, title: 'Bàn Phím Cơ Kết Nối Dây Type-C KA6406', price: 590000, oldprice: 700000,  cat: 'accessory', tags: ['new'], img: 'assets/img/keyboard.png' },
-    { id: 5, title: 'Bàn phím cơ TKL', price: 1290000, cat: 'accessory', tags: ['hot'], img: '⌨️' },
-    { id: 6, title: 'Màn hình 27" 4K', price: 7990000, cat: 'accessory', tags: ['sale'], img: '🖥️' },
-    { id: 7, title: 'Tai Nghe Chụp Tai Gaming JBLue có mic đàm thoại Led RGB', price: 1190000, oldprice: 1300000, cat: 'audio', tags: ['new'], img: 'assets/img/tainghe.png' },
-    { id: 8, title: 'Hub USB‑C 8in1', price: 890000, cat: 'accessory', tags: ['hot'], img: '🔌' },
-    { id: 9, title: 'SSD NVMe 1TB Gen4', price: 1890000, cat: 'accessory', tags: ['sale'], img: '⚙️' },
+    { id: 1, title: 'Laptop Lenovo Gaming Legion 5 15IRX10 - 83LY00A6VN', price: 32990000, cat: 'laptop', tags: ['new'], img: 'assets/img/legion-lenovo.png' },
+    { id: 2, title: 'Laptop Asus TUF Gaming A15 FA507NVR - LP007W', price: 26190000, cat: 'laptop', tags: ['hot'], img: 'assets/img/tuf.png' },
+    { id: 3, title: 'Apple Watch Series 11 GPS 42mm viền nhôm dây thể thao', price: 1320000, oldprice: 1400000, cat: 'audio', tags: ['sale'], img: 'assets/img/apw.png' },
+    { id: 4, title: 'Bàn Phím Cơ Kết Nối Dây Type-C KA6406', price: 590000, cat: 'accessory', tags: ['new'], img: 'assets/img/keyboard.png' },
+    { id: 5, title: 'Bàn phím cơ Cidoo ABM098 Tri-mode (Milk White)', price: 1290000, cat: 'accessory', tags: ['hot'], img: 'assets/img/keyboard2.png' },
+    { id: 6, title: 'Máy tính bảng Samsung Galaxy Tab S11 5G 12GB/128GB', price: 7990000, oldprice: 10000000, cat: 'accessory', tags: ['sale'], img: 'assets/img/tablet.png' },
+    { id: 7, title: 'Tai Nghe Chụp Tai Gaming JBLue có mic đàm thoại Led RGB', price: 1190000, cat: 'audio', tags: ['new'], img: 'assets/img/tainghe.png' },
+    { id: 8, title: 'Điện thoại Samsung Galaxy S25 Ultra 5G 12GB/1TB', price: 890000, cat: 'accessory', tags: ['hot'], img: 'assets/img/s25.png' },
+    { id: 9, title: 'Màn hình Gaming Asus TUF VG249QM5A 23.8 inch FHD/IPS/240Hz/0.3ms', price: 1890000, oldprice: 2000000, cat: 'accessory', tags: ['sale'], img: 'assets/img/tuf-watch.png' },
   ],
   cart: [],
 };
@@ -16,8 +16,26 @@ const store = {
 // Format tiền
 const money = (n) => (n || 0).toLocaleString('vi-VN') + '₫';
 
+function renderBadge(tags) {
+  if (tags.includes('new')) {
+    return '<img src="assets/img/new.png" alt="New" class="sale">';
+  }
+  if (tags.includes('sale')) {
+    return '<img src="assets/img/sale.png" alt="Sale" class="sale">';
+  }
+  if (tags.includes('hot')) {
+    return '<img src="assets/img/hot.png" alt="hot" class="sale">';
+  }
+}
+
 // Render card sản phẩm (dùng ở nhiều trang)
 function productCard(p) {
+  let s ;
+  if (p.oldprice) {
+    s = `<div class="p-oldprice" style="text-decoration: line-through; font-size: 14px;">${money(p.oldprice)}</div>`;
+  } else {
+    s = " ";
+  }
   return `
     <div class="col-6 col-md-4 col-lg-3">
       <div class="p-card h-100">
@@ -28,8 +46,8 @@ function productCard(p) {
           <h6 class="p-title">${p.title}</h6>
           <div class="p-meta">Danh mục: ${p.cat}</div>
           <div class="p-price">${money(p.price)}</div>
-          <div class="p-oldprice" style="text-decoration: line-through; font-size: 14px;">${money(p.oldprice)}</div>
-          <img src="assets/img/new.png" alt="sale" class="sale">
+          ${s}
+          ${renderBadge(p.tags)}
           <div class="p-actions">
             <button class="btn btn-warning btn-sm" data-add="${p.id}">Thêm</button>
             <button class="btn btn-ghost btn-sm" data-qv="${p.id}" data-bs-toggle="modal" data-bs-target="#quickView">Xem</button>
