@@ -293,10 +293,16 @@ function initDark() {
 
 // Boot
 document.addEventListener('DOMContentLoaded', () => {
-  loadCart();
-  syncCartCount();
-  initDark();
-  initHome();
-  initList();
-  initCart();
+  try { loadCart(); } catch {} 
+  try { syncCartCount(); } catch {} 
+  try { initDark(); } catch {} 
+  (typeof loadProducts === 'function' ? loadProducts() : Promise.resolve())
+    .then(() => {
+      try { initHome(); } catch {} 
+      try { initList(); } catch {} 
+    })
+    .finally(() => {
+      try { initCart(); } catch {} 
+    });
 });
+
