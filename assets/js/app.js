@@ -1,12 +1,12 @@
 const store = {
   products: [
-    { id: 1, title: 'Laptop X Ultra 14', price: 32990000, cat: 'laptop', tags: ['new'], img: '💻' },
+    { id: 1, title: 'Laptop Lenovo Gaming Legion 5 15IRX10 - 83LY00A6VN', price: 32990000, oldprice: 35000000, cat: 'laptop', tags: ['new'], img: 'assets/img/legion-lenovo.png' },
     { id: 2, title: 'Laptop Pro 16 OLED', price: 45990000, cat: 'laptop', tags: ['hot'], img: '💻' },
     { id: 3, title: 'Tai nghe ANC Pro', price: 3990000, cat: 'audio', tags: ['sale'], img: '🎧' },
-    { id: 4, title: 'Chuột không dây Silent', price: 590000, cat: 'accessory', tags: ['new'], img: '🖱️' },
+    { id: 4, title: 'Bàn Phím Cơ Kết Nối Dây Type-C KA6406', price: 590000, oldprice: 700000,  cat: 'accessory', tags: ['new'], img: 'assets/img/keyboard.png' },
     { id: 5, title: 'Bàn phím cơ TKL', price: 1290000, cat: 'accessory', tags: ['hot'], img: '⌨️' },
     { id: 6, title: 'Màn hình 27" 4K', price: 7990000, cat: 'accessory', tags: ['sale'], img: '🖥️' },
-    { id: 7, title: 'Tai nghe Gaming RGB', price: 1190000, cat: 'audio', tags: ['new'], img: '🎧' },
+    { id: 7, title: 'Tai Nghe Chụp Tai Gaming JBLue có mic đàm thoại Led RGB', price: 1190000, oldprice: 1300000, cat: 'audio', tags: ['new'], img: 'assets/img/tainghe.png' },
     { id: 8, title: 'Hub USB‑C 8in1', price: 890000, cat: 'accessory', tags: ['hot'], img: '🔌' },
     { id: 9, title: 'SSD NVMe 1TB Gen4', price: 1890000, cat: 'accessory', tags: ['sale'], img: '⚙️' },
   ],
@@ -21,13 +21,17 @@ function productCard(p) {
   return `
     <div class="col-6 col-md-4 col-lg-3">
       <div class="p-card h-100">
-        <div class="p-media">${p.img}</div>
+        <div class="p-media">
+          <img src="${p.img}" alt="${p.title}">
+        </div>
         <div class="p-body">
           <h6 class="p-title">${p.title}</h6>
           <div class="p-meta">Danh mục: ${p.cat}</div>
           <div class="p-price">${money(p.price)}</div>
+          <div class="p-oldprice" style="text-decoration: line-through; font-size: 14px;">${money(p.oldprice)}</div>
+          <img src="assets/img/new.png" alt="sale" class="sale">
           <div class="p-actions">
-            <button class="btn btn-primary btn-sm" data-add="${p.id}">Thêm</button>
+            <button class="btn btn-warning btn-sm" data-add="${p.id}">Thêm</button>
             <button class="btn btn-ghost btn-sm" data-qv="${p.id}" data-bs-toggle="modal" data-bs-target="#quickView">Xem</button>
           </div>
         </div>
