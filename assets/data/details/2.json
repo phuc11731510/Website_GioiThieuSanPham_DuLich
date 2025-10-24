@@ -1,0 +1,21 @@
+{
+  "overview": "ASUS TUF A15 khung máy chắc chắn, hiệu năng ổn định cho game và đồ họa.",
+  "badges": ["TUF", "Mạnh mẽ", "Bền bỉ"],
+  "specs": [
+    { "title": "Hiệu năng", "items": [
+      { "label": "CPU", "value": "AMD Ryzen 7 (dòng 7000)" },
+      { "label": "RAM", "value": "16GB DDR5" },
+      { "label": "GPU", "value": "NVIDIA GeForce RTX 4060 8GB" },
+      { "label": "Lưu trữ", "value": "SSD 512GB NVMe" }
+    ]},
+    { "title": "Màn hình", "items": [
+      { "label": "Kích thước", "value": "15.6 inch FHD" },
+      { "label": "Tần số quét", "value": "144Hz" }
+    ]}
+  ],
+  "promos": ["Tặng chuột gaming (demo)"],
+  "gallery": ["assets/img/tuf.png"],
+  "stock": true,
+  "rating": 4.6
+}
+

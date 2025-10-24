@@ -1,0 +1,18 @@
+{
+  "overview": "Cidoo ABM098 Tri‑mode: 3 chế độ kết nối linh hoạt, gõ đầm tay.",
+  "badges": ["Tri‑mode", "Hot‑swap", "Foam tiêu âm"],
+  "specs": [
+    { "title": "Kết nối", "items": [
+      { "label": "Chế độ", "value": "USB‑C / 2.4GHz / Bluetooth" }
+    ]},
+    { "title": "Bàn phím", "items": [
+      { "label": "Layout", "value": "96% (98 phím)" },
+      { "label": "Keycaps", "value": "PBT dye‑sub" }
+    ]}
+  ],
+  "promos": ["Tặng receiver 2.4GHz (demo)"],
+  "gallery": ["assets/img/keyboard2.png"],
+  "stock": true,
+  "rating": 4.4
+}
+
