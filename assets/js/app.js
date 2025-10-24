@@ -88,16 +88,7 @@ function initHome() {
   mount('#grid-sale', (p) => p.tags.includes('sale'));
 
   // Delegation for add & quick view
-  document.body.addEventListener('click', (e) => {
-
-    const qvId = e.target.getAttribute('data-qv');
-    if (addId) {
-      addToCart(+addId);
-    }
-    if (qvId) {
-      quickView(+qvId);
-    }
-  });
+  document.body.addEventListener('click', (e) => { const btn = e.target.closest('[data-qv]'); if (btn) { const id = Number(btn.getAttribute('data-qv')); if (!Number.isNaN(id)) quickView(id); } });
 
   // Countdown 48h
   const end = Date.now() + 48 * 3600 * 1000;
@@ -140,12 +131,7 @@ function initList() {
     limit += 4;
     render();
   };
-  document.body.addEventListener('click', (e) => {
-
-    if (id) {
-      addToCart(+id);
-    }
-  });
+  document.body.addEventListener('click', (e) => { const btn = e.target.closest('[data-qv]'); if (btn) { const id = Number(btn.getAttribute('data-qv')); if (!Number.isNaN(id)) quickView(id); } });
 }
 
 // Giỏ hàng
@@ -243,10 +229,10 @@ function quickView(id) {
     body.innerHTML = `
       <div class="row g-3">
         <div class="col-md-6">
-          <div class="ratio ratio-4x3 bg-body-secondary rounded-4 d-flex align-items-center justify-content-center">
+          <div class="qv-media bg-body-secondary rounded-4 d-flex align-items-center justify-content-center">
             ${isAssetImage(product.img)
-              ? `<img src="${product.img}" alt="${product.title}" class="img-fluid rounded-4 w-100 h-100 object-fit-cover">`
-              : `<span class="display-3">${product.img || '[]'}</span>`}
+              ? `<img src="${product.img}" alt="${product.title}" class="qv-img">`
+              : `<span class="display-3">${product.img || '🛍️'}</span>`}
           </div>
         </div>
         <div class="col-md-6">
@@ -309,6 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try { initCart(); } catch {} 
     });
 });
+
 
 
 

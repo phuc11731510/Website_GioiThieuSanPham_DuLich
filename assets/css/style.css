@@ -222,3 +222,18 @@ nav .nav-link {
   right: 1rem;
   z-index: 1080;
 }
+
+/* Quick View media fix */
+.qv-media {
+  height: 320px;
+  overflow: hidden;
+}
+.qv-media .qv-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 576px) {
+  .qv-media { height: 240px; }
+}
