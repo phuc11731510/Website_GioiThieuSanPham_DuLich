@@ -1,6 +1,4 @@
-﻿// E‑Tech app.js (UTF‑8)
-// Chế độ giới thiệu: chỉ hiển thị sản phẩm, không mua hàng
-
+﻿
 const store = {
   products: [],
 };
