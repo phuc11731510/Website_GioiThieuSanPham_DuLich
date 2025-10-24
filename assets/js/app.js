@@ -53,7 +53,7 @@ function productCard(p) {
           ${s}
           ${renderBadge(p.tags)}
           <div class="p-actions">
-            <button class="btn btn-warning btn-sm" data-add="${p.id}">Thêm</button>
+
             <button class="btn btn-ghost btn-sm" data-qv="${p.id}" data-bs-toggle="modal" data-bs-target="#quickView">Xem</button>
           </div>
         </div>
@@ -89,11 +89,10 @@ function initHome() {
 
   // Delegation for add & quick view
   document.body.addEventListener('click', (e) => {
-    const addId = e.target.getAttribute('data-add');
+
     const qvId = e.target.getAttribute('data-qv');
     if (addId) {
       addToCart(+addId);
-      toast('Đã thêm vào giỏ');
     }
     if (qvId) {
       quickView(+qvId);
@@ -142,10 +141,9 @@ function initList() {
     render();
   };
   document.body.addEventListener('click', (e) => {
-    const id = e.target.getAttribute('data-add');
+
     if (id) {
       addToCart(+id);
-      toast('Đã thêm vào giỏ');
     }
   });
 }
@@ -245,8 +243,10 @@ function quickView(id) {
     body.innerHTML = `
       <div class="row g-3">
         <div class="col-md-6">
-          <div class="ratio ratio-4x3 bg-body-secondary rounded-4 d-flex align-items-center justify-content-center fs-1">
-            ${product.img}
+          <div class="ratio ratio-4x3 bg-body-secondary rounded-4 d-flex align-items-center justify-content-center">
+            ${isAssetImage(product.img)
+              ? `<img src="${product.img}" alt="${product.title}" class="img-fluid rounded-4 w-100 h-100 object-fit-cover">`
+              : `<span class="display-3">${product.img || '[]'}</span>`}
           </div>
         </div>
         <div class="col-md-6">
@@ -256,7 +256,11 @@ function quickView(id) {
         </div>
       </div>
     `;
-    document.getElementById('qvAdd').onclick = () => addToCart(product.id);
+    const detailLink = document.querySelector('#quickView .modal-footer a[href="product.html"]');
+    if (detailLink) {
+      detailLink.href = `product.html?id=${product.id}`;
+      try { localStorage.setItem('last_product_id', String(product.id)); } catch (e) {}
+    }
   }
 }
 
@@ -305,4 +309,6 @@ document.addEventListener('DOMContentLoaded', () => {
       try { initCart(); } catch {} 
     });
 });
+
+
 
