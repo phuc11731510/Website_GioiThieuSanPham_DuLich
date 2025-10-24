@@ -1,37 +1,171 @@
 /* E‑Tech Skeleton Styles — giữ 50–60% tinh thần bố cục mẫu; thêm sáng tạo: dark mode, lift hover */
-:root{--radius:1.2rem}
-*{box-sizing:border-box}body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-.topbar{letter-spacing:.2px}
-.mega .cat{padding:.35rem .75rem;background:#f2f2f2;border-radius:999px;color:#333;text-decoration:none;white-space:nowrap}
-.mega .cat:hover{background:#e9ecef}
-.hero{color:#fff;min-height:280px;background-size:cover;background-position:center}
-.hero-1{background-image:linear-gradient(30deg,rgba(0,0,0,.5),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=1200')}
-.hero-2{background-image:linear-gradient(30deg,rgba(0,0,0,.5),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1518441902113-c1d0d0a1300e?w=1200')}
-.hero-3{background-image:linear-gradient(30deg,rgba(0,0,0,.5),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200')}
-.bg-promo-1{background:linear-gradient(135deg,#fbd,#fcc)}.bg-promo-2{background:linear-gradient(135deg,#cdf,#def)}.bg-promo-3{background:linear-gradient(135deg,#cfd,#efe)}
-.ratio-21x9{--bs-aspect-ratio:42.85%}
-.lift{transition:.2s transform, .2s box-shadow}.lift:hover{transform:translateY(-4px);box-shadow:0 1rem 2rem rgba(0,0,0,.12)}
-.card .ratio{border-top-left-radius:var(--radius);border-top-right-radius:var(--radius)}
-.brand{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #eee;border-radius:var(--radius);height:80px;font-weight:700;letter-spacing:1px}
-footer .link-secondary{text-decoration:none}
-.product-hero{background-image:url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200');background-size:cover;border-radius:var(--radius)}
-.thumb{width:80px;height:60px;background:#e9ecef;border-radius:.5rem}
-.spec li{padding:.25rem 0;border-bottom:1px dashed #eee}
+:root {
+  --radius: 1.2rem;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+.topbar {
+  letter-spacing: 0.2px;
+}
+.mega .cat {
+  padding: 0.35rem 0.75rem;
+  background: #f2f2f2;
+  border-radius: 999px;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.mega .cat:hover {
+  background: #e9ecef;
+}
+.hero {
+  color: #fff;
+  min-height: 280px;
+  background-size: cover;
+  background-position: center;
+}
+.hero-1 {
+  background-image: linear-gradient(
+      30deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.1)
+    ),
+    url("https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=1200");
+}
+.hero-2 {
+  background-image: linear-gradient(
+      30deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.1)
+    ),
+    url("https://images.unsplash.com/photo-1518441902113-c1d0d0a1300e?w=1200");
+}
+.hero-3 {
+  background-image: linear-gradient(
+      30deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.1)
+    ),
+    url("https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200");
+}
+.bg-promo-1 {
+  background: linear-gradient(135deg, #fbd, #fcc);
+}
+.bg-promo-2 {
+  background: linear-gradient(135deg, #cdf, #def);
+}
+.bg-promo-3 {
+  background: linear-gradient(135deg, #cfd, #efe);
+}
+.ratio-21x9 {
+  --bs-aspect-ratio: 42.85%;
+}
+.lift {
+  transition: 0.2s transform, 0.2s box-shadow;
+}
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+}
+.card .ratio {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  height: 80px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+footer .link-secondary {
+  text-decoration: none;
+}
+.product-hero {
+  background-image: url("https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200");
+  background-size: cover;
+  border-radius: var(--radius);
+}
+.thumb {
+  width: 80px;
+  height: 60px;
+  background: #e9ecef;
+  border-radius: 0.5rem;
+}
+.spec li {
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed #eee;
+}
 /* Dark mode (sáng tạo) */
-:root[data-bs-theme='dark'] .mega .cat{background:#222;color:#ddd}
-:root[data-bs-theme='dark'] .brand{background:#111;border-color:#222}
-:root[data-bs-theme='dark'] .thumb{background:#333}
+:root[data-bs-theme="dark"] .mega .cat {
+  background: #222;
+  color: #ddd;
+}
+:root[data-bs-theme="dark"] .brand {
+  background: #111;
+  border-color: #222;
+}
+:root[data-bs-theme="dark"] .thumb {
+  background: #333;
+}
 /* Product cards */
-.p-card{border:1px solid #eee;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-.p-media{height:180px;background:#f3f4f6;display:flex;align-items:center;justify-content:center}
-.p-body{padding:.75rem}
-.p-title{font-weight:600;margin:0 0 .25rem 0}
-.p-price{color:#dc3545;font-weight:700}
-.p-meta{font-size:.85rem;color:#6c757d}
-.p-actions{display:flex;gap:.5rem;margin-top:.5rem}
-.btn-ghost{border:1px solid #e9ecef;background:#fff}
+.p-card {
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.p-media {
+  height: 180px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-body {
+  padding: 0.75rem;
+}
+.p-title {
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+.p-price {
+  color: #dc3545;
+  font-weight: 700;
+}
+.p-meta {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+.p-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.btn-ghost {
+  border: 1px solid #e9ecef;
+  background: #fff;
+}
 /* Utilities */
-.sticky-md-top{top:1rem}
-.theme-auto{transition: background-color .2s ease, color .2s ease}
+.sticky-md-top {
+  top: 1rem;
+}
+.theme-auto {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
 /* Toast */
-.toast-fixed{position:fixed;bottom:1rem;right:1rem;z-index:1080}
+.toast-fixed {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1080;
+}
