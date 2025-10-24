@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Tech Store — Trang chủ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<link rel="stylesheet" href="assets/css/style.css"></head><body class="theme-auto">
+<div class="topbar py-1 small text-bg-dark"><div class="container d-flex justify-content-between align-items-center">
+<div>Chào mừng đến E‑Tech — Sale cuối tuần!</div><div class="d-flex gap-3 align-items-center">
+<button id="btnDark" class="btn btn-sm btn-outline-light">🌓 Dark</button>
+<a href="cart.html" class="text-white text-decoration-none">🛒 Giỏ hàng <span class="badge bg-warning text-dark" id="cartCount">0</span></a>
+</div></div></div>
+<header class="py-3 border-bottom"><div class="container d-flex align-items-center justify-content-between">
+<a class="navbar-brand fw-bold fs-3" href="index.html">E‑Tech</a>
+<form class="search flex-grow-1 mx-3"><div class="input-group">
+<input class="form-control" placeholder="Tìm kiếm laptop, chuột, bàn phím..."><button class="btn btn-primary">Tìm</button>
+</div></form>
+<nav class="d-none d-md-flex gap-3"><a href="products.html" class="nav-link">Sản phẩm</a><a href="#" class="nav-link">Khuyến mãi</a><a href="#" class="nav-link">Tin tức</a><a href="#" class="nav-link">Liên hệ</a></nav>
+</div>
+<div class="mega border-top"><div class="container d-flex gap-3 py-2 overflow-auto">
+<a class="cat" href="#">💻 Laptop</a><a class="cat" href="#">🖥️ PC</a><a class="cat" href="#">⌨️ Bàn phím</a><a class="cat" href="#">🖱️ Chuột</a>
+<a class="cat" href="#">🎧 Tai nghe</a><a class="cat" href="#">🖨️ Máy in</a><a class="cat" href="#">⚙️ Linh kiện</a><a class="cat" href="#">📱 Phụ kiện</a>
+</div></div></header>
+<section class="container my-4"><div class="swiper hero-swiper"><div class="swiper-wrapper">
+<div class="swiper-slide hero hero-1 d-flex align-items-center p-5 rounded-4"><div>
+<h2 class="display-6 fw-bold">Laptop Gaming RTX 40 Series</h2><p>Hiệu năng vượt trội — ưu đãi đến 15%.</p>
+<a href="products.html" class="btn btn-lg btn-primary">Mua ngay</a></div></div>
+<div class="swiper-slide hero hero-2 d-flex align-items-center p-5 rounded-4"><div>
+<h2 class="display-6 fw-bold">Tai nghe không dây ANC</h2><p>Pin 40h, chống ồn chủ động.</p>
+<a href="products.html#audio" class="btn btn-lg btn-outline-light">Khám phá</a></div></div>
+</div><div class="swiper-pagination"></div></div></section>
+<section class="container my-4"><div class="row g-3">
+<div class="col-md-4"><a class="promo card lift h-100" href="#"><div class="ratio ratio-21x9 bg-gradient bg-promo-1 rounded-top"></div><div class="card-body"><h5 class="card-title">Flash Sale 48h</h5><p class="card-text small">Ngoại vi giảm sốc.</p></div></a></div>
+<div class="col-md-4"><a class="promo card lift h-100" href="#"><div class="ratio ratio-21x9 bg-gradient bg-promo-2 rounded-top"></div><div class="card-body"><h5 class="card-title">Build PC</h5><p class="card-text small">Lắp ráp theo yêu cầu.</p></div></a></div>
+<div class="col-md-4"><a class="promo card lift h-100" href="#"><div class="ratio ratio-21x9 bg-gradient bg-promo-3 rounded-top"></div><div class="card-body"><h5 class="card-title">Thu cũ đổi mới</h5><p class="card-text small">Ưu đãi thêm 3 triệu.</p></div></a></div>
+</div></section>
+<section class="container my-5"><div class="d-flex justify-content-between align-items-end mb-3">
+<h3 class="mb-0">Sản phẩm nổi bật</h3><ul class="nav nav-pills gap-1" id="pills-tab"><li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab-new">Mới</button></li>
+<li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-hot">Hot</button></li>
+<li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-sale">Đang giảm</button></li></ul></div>
+<div class="tab-content"><div class="tab-pane fade show active" id="tab-new"><div class="row g-3" id="grid-new"></div></div>
+<div class="tab-pane fade" id="tab-hot"><div class="row g-3" id="grid-hot"></div></div>
+<div class="tab-pane fade" id="tab-sale"><div class="row g-3" id="grid-sale"></div></div></div></section>
+<section class="container my-5"><div class="card p-4 d-flex flex-md-row align-items-center justify-content-between">
+<div><h4 class="mb-1">Mega Sale thiết bị văn phòng</h4><p class="text-muted small mb-0">Kết thúc sau: <span id="clock">--:--:--</span></p></div>
+<a href="products.html#sale" class="btn btn-danger btn-lg">Săn deal</a></div></section>
+<section class="container my-5"><h3 class="mb-3">Thương hiệu</h3><div class="swiper brand-swiper">
+<div class="swiper-wrapper"><div class="swiper-slide brand">ASUS</div><div class="swiper-slide brand">ACER</div><div class="swiper-slide brand">MSI</div>
+<div class="swiper-slide brand">DELL</div><div class="swiper-slide brand">HP</div><div class="swiper-slide brand">LENOVO</div><div class="swiper-slide brand">RAZER</div><div class="swiper-slide brand">LOGITECH</div>
+</div></div></section>
+<footer class="footer text-muted border-top mt-5"><div class="container py-4">
+<div class="row g-4">
+<div class="col-md-4"><h5 class="text-dark">E‑Tech</h5><p class="small">Thiết bị công nghệ chính hãng.</p></div>
+<div class="col-md-4"><h6 class="text-dark">Thông tin</h6><ul class="list-unstyled small">
+<li><a class="link-secondary" href="#">Giới thiệu</a></li><li><a class="link-secondary" href="#">Tuyển dụng</a></li><li><a class="link-secondary" href="#">Hệ thống cửa hàng</a></li>
+</ul></div>
+<div class="col-md-4"><h6 class="text-dark">Liên hệ</h6><p class="small mb-1">0123 456 789</p><p class="small mb-0">support@etech.vn</p></div>
+</div><div class="d-flex justify-content-between pt-3 mt-3 border-top small"><span>© 2025 E‑Tech</span><a href="#" class="link-secondary">Điều khoản</a></div>
+</div></footer>
+<div class="modal fade" id="quickView" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
+<div class="modal-header"><h5 class="modal-title">Xem nhanh</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+<div class="modal-body" id="qvBody"></div>
+<div class="modal-footer"><a href="product.html" class="btn btn-outline-secondary">Xem chi tiết</a><button class="btn btn-primary" id="qvAdd">Thêm vào giỏ</button></div>
+</div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="assets/js/app.js"></script></body></html>
