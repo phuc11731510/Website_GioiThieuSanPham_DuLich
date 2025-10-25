@@ -322,6 +322,10 @@ textarea:focus {
   z-index: 99; 
   cursor: pointer;
   height: 50px;
+  transition: 0.2s ease-in-out;
+}
+#arrow:active {
+  transform: scale(0.3);
 }
 @media (max-width: 576px) {
   .qv-media { height: 240px; }
