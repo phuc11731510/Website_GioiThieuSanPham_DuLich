@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
+  <body data-product-page="1">
     <div class="container my-4">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -29,37 +29,24 @@
       </nav>
       <div class="row g-4">
         <div class="col-md-6">
-          <div class="ratio ratio-4x3 bg-body-secondary rounded-4 product-hero"></div>
-          <div class="d-flex gap-2 mt-2">
-            <div class="thumb"></div>
-            <div class="thumb"></div>
-            <div class="thumb"></div>
-          </div>
+          <div class="ratio ratio-4x3 bg-body-secondary rounded-4 product-hero" id="pHero"></div>
+          <div class="d-flex gap-2 mt-2" id="pThumbs"></div>
         </div>
         <div class="col-md-6">
-          <h2 id="pTitle">Laptop X Ultra 14</h2>
+          <h2 id="pTitle"></h2>
           <div class="d-flex align-items-center gap-2 mb-2">
-            <span class="badge text-bg-success">Còn hàng</span>
-            <span class="text-warning">★★★★★</span>
+            <span class="badge text-bg-success" id="pStock">Còn hàng</span>
+            <span class="text-warning" id="pRating"></span>
           </div>
-          <p class="lead mb-1" id="pPrice">32.990.000₫</p>
+          <p class="lead mb-1" id="pPrice"></p>
           <p class="small text-muted">Đã gồm VAT</p>
           <div class="d-flex gap-2 mb-3">
             <button class="btn btn-outline-secondary">So sánh</button>
           </div>
-          <ul class="list-unstyled small spec">
-            <li>CPU: i7‑13700H</li>
-            <li>RAM: 16GB</li>
-            <li>SSD: 1TB NVMe</li>
-            <li>GPU: RTX 4060 8GB</li>
-            <li>Màn: 14.5" OLED 120Hz</li>
-          </ul>
-          <div class="card p-3 small">
+          <ul class="list-unstyled small spec" id="specList"></ul>
+          <div class="card p-3 small d-none" id="promoCard">
             <strong>Khuyến mãi:</strong>
-            <ul class="mb-0">
-              <li>Tặng balo</li>
-              <li>Giảm 10% khi mua chuột</li>
-            </ul>
+            <ul class="mb-0" id="promoList"></ul>
           </div>
         </div>
       </div>

@@ -134,8 +134,9 @@ nav .nav-link {
   line-height: 38px;
 }
 .product-hero {
-  background-image: url("https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200");
-  background-size: cover;
+  /* Trước đây có ảnh nền demo gây lộ viền khi thay ảnh động */
+  background-image: none;
+  background-color: transparent;
   border-radius: var(--radius);
 }
 .thumb {
