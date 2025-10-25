@@ -275,6 +275,22 @@ nav .nav-link {
 .row.g-4 {
   margin: 50px;
 }
+select {
+  border-radius: 15px;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #f8f9fa; 
+  color: #333;               
+  border: 1px solid #ccc;  
+  border-radius: 8px;
+}
+select:focus {
+  border-color: #ffc107 !important;
+  box-shadow: 0 0 0 1px rgba(255, 193, 7, 0.25) !important;
+}
+input[type="checkbox"] {
+  accent-color: #ffc107; 
+}
 @media (max-width: 576px) {
   .qv-media { height: 240px; }
 }

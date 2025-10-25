@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>E-Tech Store — Danh mục</title>
+    <title>Foxel — Danh mục</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -14,13 +14,48 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">Foxel</a>
-        <span class="ms-auto"></span>
+  <body class="theme-auto">
+    <div class="topbar py-1 small text-bg-dark">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div>Chào mừng đến Foxel — Khách hàng là thượng đế</div>
+        <div class="d-flex gap-3 align-items-center">
+          <button id="btnDark" class="btn btn-sm btn-outline-light">🌓 Dark</button>
+        </div>
       </div>
-    </nav>
+    </div>
+    <header class="py-3 border-bottom">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a class="navbar-brand fw-bold fs-3" href="index.html">
+            <img src="assets/img/fox.png" alt="fox" height="50px">
+        </a>
+        <h2 style="margin: 10px;">Foxel</h2>
+        <form class="search flex-grow-1 mx-3">
+          <div class="input-group">
+            <input class="form-control" placeholder="Bạn muốn tìm gì ?" />
+            <button class="btn btn-warning">Tìm</button>
+          </div>
+        </form>
+        <nav class="d-none d-md-flex gap-3">
+          <a href="index.html" class="nav-link">Trang chủ</a>
+          <a href="products.html" class="nav-link active">Sản phẩm</a>
+          <a href="#" class="nav-link">Khuyến mãi</a>
+          <a href="#" class="nav-link">Tin tức</a>
+          <a href="#" class="nav-link">Liên hệ</a>
+        </nav>
+      </div>
+      <div class="mega border-top">
+        <div class="container d-flex gap-3 py-2 overflow-auto">
+          <a class="cat" href="#">💻 Laptop</a>
+          <a class="cat" href="#">🖥️ PC</a>
+          <a class="cat" href="#">⌨️ Bàn phím</a>
+          <a class="cat" href="#">🖱️ Chuột</a>
+          <a class="cat" href="#">🎧 Tai nghe</a>
+          <a class="cat" href="#">🖨️ Máy in</a>
+          <a class="cat" href="#">⚙️ Linh kiện</a>
+          <a class="cat" href="#">📱 Phụ kiện</a>
+        </div>
+      </div>
+    </header>
     <main class="container my-4">
       <div class="row">
         <aside class="col-md-3">
@@ -46,7 +81,7 @@
               <input class="form-check-input" type="checkbox" id="inStock" checked />
               <label for="inStock" class="form-check-label small">Còn hàng</label>
             </div>
-            <button class="btn btn-primary w-100" id="applyFilter">Áp dụng</button>
+            <button class="btn btn-warning w-100" id="applyFilter">Áp dụng</button>
           </div>
         </aside>
         <section class="col-md-9">
