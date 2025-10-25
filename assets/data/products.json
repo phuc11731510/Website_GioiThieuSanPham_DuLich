@@ -1,11 +1,11 @@
 ﻿[
     { "id": 1, "title": "Laptop Lenovo Gaming Legion 5 15IRX10 - 83LY00A6VN", "price": 32990000, "cat": "laptop", "tags": ["new"], "img": "assets/img/legion-lenovo.png" },
     { "id": 2, "title": "Laptop Asus TUF Gaming A15 FA507NVR - LP007W", "price": 26190000, "cat": "laptop", "tags": ["hot"], "img": "assets/img/tuf.png" },
-    { "id": 3, "title": "Apple Watch Series 11 GPS 42mm viền nhôm dây thể thao", "price": 1320000, "oldprice": 1400000, "cat": "audio", "tags": ["sale"], "img": "assets/img/apw.png" },
+    { "id": 3, "title": "Đồng Hồ Thông Minh Bluetooth Smart Watch X90 Ultra 2", "price": 1320000, "oldprice": 1400000, "cat": "audio", "tags": ["sale"], "img": "assets/img/apw.png" },
     { "id": 4, "title": "Bàn Phím Cơ Kết Nối Dây Type-C KA6406", "price": 590000, "cat": "accessory", "tags": ["new"], "img": "assets/img/keyboard.png" },
     { "id": 5, "title": "Bàn phím cơ Cidoo ABM098 Tri-mode (Milk White)", "price": 1290000, "cat": "accessory", "tags": ["hot"], "img": "assets/img/keyboard2.png" },
-    { "id": 6, "title": "Máy tính bảng Samsung Galaxy Tab S11 5G 12GB/128GB", "price": 7990000, "oldprice": 10000000, "cat": "accessory", "tags": ["sale"], "img": "assets/img/tablet.png" },
+    { "id": 6, "title": "HUAWEI MatePad 11.5 Màn Hình PaperMatte", "price": 7990000, "oldprice": 10000000, "cat": "accessory", "tags": ["sale"], "img": "assets/img/tablet.png" },
     { "id": 7, "title": "Tai Nghe Chụp Tai Gaming JBLue có mic đàm thoại Led RGB", "price": 1190000, "cat": "audio", "tags": ["new"], "img": "assets/img/tainghe.png" },
     { "id": 8, "title": "Điện thoại Samsung Galaxy S25 Ultra 5G 12GB/1TB", "price": 890000, "cat": "accessory", "tags": ["hot"], "img": "assets/img/s25.png" },
-    { "id": 9, "title": "Màn hình Gaming Asus TUF VG249QM5A 23.8 inch FHD/IPS/240Hz/0.3ms", "price": 1890000, "oldprice": 2000000, "cat": "accessory", "tags": ["sale"], "img": "assets/img/tuf-watch.png" }
+    { "id": 9, "title": "Màn hình Gaming Asus TUF VG249QM5A 23.8 inch", "price": 1890000, "oldprice": 2000000, "cat": "accessory", "tags": ["sale"], "img": "assets/img/tuf-watch.png" }
 ]

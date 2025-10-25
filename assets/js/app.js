@@ -42,7 +42,7 @@ function productCard(p) {
     <div class="col-6 col-md-4 col-lg-3">
       <div class="p-card h-100" id="card">
         <div class="p-media">
-          <a href="#"><img src="${p.img}" alt="${p.title}"></a>
+          <a href="#"><img style="object-fit: cover;" src="${p.img}" alt="${p.title}"></a>
         </div>
         <div class="p-body">
           <h6 class="p-title">${p.title}</h6>
