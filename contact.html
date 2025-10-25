@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>E‑Tech Store — Liên hệ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">E‑Tech</a>
+        <div class="ms-auto d-flex gap-3">
+          <a class="nav-link" href="products.html">Sản phẩm</a>
+          <a class="nav-link active" href="contact.html">Liên hệ</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-4">
+      <div class="row g-4">
+        <div class="col-md-7">
+          <div class="card p-3 p-md-4">
+            <h4 class="mb-3">Gửi lời nhắn cho chúng tôi</h4>
+            <form id="contactForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Họ và tên</label>
+                  <input class="form-control" id="name" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" required />
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Chủ đề</label>
+                  <input class="form-control" id="subject" />
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Nội dung</label>
+                  <textarea class="form-control" id="message" rows="5" required></textarea>
+                </div>
+                <div class="col-12 d-flex align-items-center gap-2">
+                  <button class="btn btn-warning" type="submit" style="color:#000">Gửi</button>
+                  <div id="formAlert" class="small text-success d-none">Cảm ơn bạn! Chúng tôi đã nhận được thông tin.</div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="card p-3 p-md-4">
+            <h5 class="mb-3">Thông tin liên hệ</h5>
+            <ul class="list-unstyled small mb-3">
+              <li><strong>Điện thoại:</strong> </li>
+              <li><strong>Email:</strong> </li>
+              <li><strong>Địa chỉ:</strong> </li>
+              <li><strong>Giờ làm việc:</strong> </li>
+            </ul>
+            <div class="ratio ratio-16x9 bg-body-secondary rounded-3 d-flex align-items-center justify-content-center">
+              <span class="text-muted">Bản đồ (demo)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-center small text-muted py-4 border-top">
+      © 2025 E‑Tech — <a href="contact.html" class="link-secondary">Liên hệ</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const ok = document.getElementById('formAlert');
+        ok.classList.remove('d-none');
+        this.reset();
+      });
+    </script>
+  </body>
+  </html>
+
