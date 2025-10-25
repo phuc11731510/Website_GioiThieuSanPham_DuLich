@@ -89,6 +89,9 @@ body {
 header .container {
   margin-bottom: 10px;
 }
+footer {
+  background-color: #132440;
+}
 footer .link-secondary {
   text-decoration: none;
 }
@@ -239,11 +242,18 @@ nav .nav-link {
   object-fit: contain;
   display: block;
 }
-.swiper-wrapper div a {
+.swiper-wrapper a {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  text-decoration: none;
+}
+.swiper-wrapper a div {
   background-color: #ffc107;
   color: #000;
   margin: 10px 0;
   text-decoration: none;
+  width: 130px;
+  margin-left: 30px;
 }
 .swiper-wrapper a div:hover {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
