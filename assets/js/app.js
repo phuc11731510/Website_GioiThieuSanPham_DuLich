@@ -18,8 +18,6 @@ async function loadProducts() {
   }
 }
 
-// Format tiền
-
 function renderBadge(tags) {
   if (tags.includes('new')) {
     return '<img src="assets/img/new.png" alt="New" class="sale">';
