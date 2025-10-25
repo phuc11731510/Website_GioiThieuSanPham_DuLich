@@ -85,7 +85,7 @@ function initHome() {
   mount('#grid-sale', (p) => p.tags.includes('sale'));
 
   // Delegation for add & quick view
-  document.body.addEventListener('click', (e) => { const btn = e.target.closest('[data-qv]'); if (btn) { const id = Number(btn.getAttribute('data-qv')); if (!Number.isNaN(id)) quickView(id); } });
+  document.body.addEventListener('click', (e) => { const btn = e.target.closest('[data-qv]'); if (btn) { const id = Number(btn.getAttribute('data-qv')); if (!Number.isNaN(id)) quickViewAsync(id); } });
 
   // Countdown 48h
   const end = Date.now() + 48 * 3600 * 1000;
@@ -128,7 +128,7 @@ function initList() {
     limit += 4;
     render();
   };
-  document.body.addEventListener('click', (e) => { const btn = e.target.closest('[data-qv]'); if (btn) { const id = Number(btn.getAttribute('data-qv')); if (!Number.isNaN(id)) quickView(id); } });
+  document.body.addEventListener('click', (e) => { const btn = e.target.closest('[data-qv]'); if (btn) { const id = Number(btn.getAttribute('data-qv')); if (!Number.isNaN(id)) quickViewAsync(id); } });
 }
 
 // Giỏ hàng
@@ -214,6 +214,92 @@ function loadCart() {
     store.cart = JSON.parse(localStorage.getItem('etech_cart') || '[]');
   } catch {
     store.cart = [];
+  }
+}
+
+// Tải chi tiết sản phẩm từ file details/{id}.json
+async function loadDetails(id) {
+  try {
+    const res = await fetch(`assets/data/details/${id}.json`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(res.statusText);
+    return await res.json();
+  } catch (e) {
+    console.warn('Không tải được details cho id', id, e);
+    return null;
+  }
+}
+
+// Quick View: hiện thông tin nhanh theo id sản phẩm (dùng dữ liệu từ details)
+async function quickViewAsync(id) {
+  const product = store.products.find((entry) => entry.id === id);
+  if (!product) return;
+  const body = document.getElementById('qvBody');
+  if (!body) return;
+
+  // Khung tạm trong khi chờ tải
+  body.innerHTML = `
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="qv-media bg-body-secondary rounded-4 d-flex align-items-center justify-content-center">
+          ${isAssetImage(product.img)
+            ? `<img src="${product.img}" alt="${product.title}" class="qv-img">`
+            : `<span class="display-3">${product.img || '🛍️'}</span>`}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h5 class="mb-1">${product.title}</h5>
+        <div class="text-danger fw-bold mb-2">${money(product.price)}</div>
+        <div class="small text-muted">Đang tải thông tin...</div>
+      </div>
+    </div>
+  `;
+
+  const details = await loadDetails(id);
+  if (details) {
+    const badges = Array.isArray(details.badges) ? details.badges.slice(0, 4) : [];
+    const badgeHtml = badges
+      .map((b) => `<span class="badge text-bg-secondary me-1 mb-1">${b}</span>`)
+      .join('');
+
+    let specItems = [];
+    if (Array.isArray(details.specs)) {
+      for (const group of details.specs) {
+        if (group && Array.isArray(group.items)) {
+          for (const it of group.items) {
+            if (it && it.label && it.value) specItems.push(`${it.label}: ${it.value}`);
+            if (specItems.length >= 4) break;
+          }
+        }
+        if (specItems.length >= 4) break;
+      }
+    }
+    const specHtml = specItems.length
+      ? `<ul class="small mb-0">${specItems.map((s) => `<li>${s}</li>`).join('')}</ul>`
+      : (details.overview ? `<p class="small mb-0">${details.overview}</p>` : '');
+
+    body.innerHTML = `
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="qv-media bg-body-secondary rounded-4 d-flex align-items-center justify-content-center">
+            ${isAssetImage(product.img)
+              ? `<img src="${product.img}" alt="${product.title}" class="qv-img">`
+              : `<span class="display-3">${product.img || '🛍️'}</span>`}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5 class="mb-1">${product.title}</h5>
+          <div class="mb-2">${badgeHtml}</div>
+          <div class="text-danger fw-bold mb-2">${money(product.price)}</div>
+          ${specHtml || '<p class="small mb-0">Thông tin đang cập nhật</p>'}
+        </div>
+      </div>
+    `;
+  }
+
+  const detailLink = document.querySelector('#quickView .modal-footer a[href="product.html"]');
+  if (detailLink) {
+    detailLink.href = `product.html?id=${product.id}`;
+    try { localStorage.setItem('last_product_id', String(product.id)); } catch (e) {}
   }
 }
 
