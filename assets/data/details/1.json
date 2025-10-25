@@ -1,0 +1,22 @@
+{
+  "overview": "Laptop gaming 15-inch bền bỉ, tản nhiệt hiệu quả, phù hợp học tập và chơi game.",
+  "badges": ["RTX", "144Hz", "Wi‑Fi 6"],
+  "specs": [
+    { "title": "Hiệu năng", "items": [
+      { "label": "CPU", "value": "Intel Core i7‑14700HX" },
+      { "label": "RAM", "value": "16GB DDR5" },
+      { "label": "GPU", "value": "NVIDIA GeForce RTX 4050 8GB" },
+      { "label": "Lưu trữ", "value": "SSD 512GB NVMe" }
+    ]},
+    { "title": "Màn hình", "items": [
+      { "label": "Kích thước", "value": "15.6 inch FHD" },
+      { "label": "Tần số quét", "value": "144Hz" },
+      { "label": "Tấm nền", "value": "IPS" }
+    ]}
+  ],
+  "promos": ["Tặng balo laptop", "Vệ sinh máy miễn phí năm đầu (demo)"],
+  "gallery": ["assets/img/legion-lenovo.png"],
+  "stock": true,
+  "rating": 4.7
+}
+

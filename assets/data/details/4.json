@@ -1,0 +1,16 @@
+{
+  "overview": "Bàn phím cơ có dây Type‑C, gõ êm, phù hợp làm việc và giải trí.",
+  "badges": ["Type‑C", "LED nhiều chế độ"],
+  "specs": [
+    { "title": "Bàn phím", "items": [
+      { "label": "Switch", "value": "Red (tuyến tính)" },
+      { "label": "Layout", "value": "Fullsize 104 phím" },
+      { "label": "Kết nối", "value": "USB‑C có dây" }
+    ]}
+  ],
+  "promos": ["Tặng keypuller (demo)"],
+  "gallery": ["assets/img/keyboard.png"],
+  "stock": true,
+  "rating": 4.2
+}
+

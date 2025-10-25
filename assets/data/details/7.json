@@ -1,0 +1,18 @@
+{
+  "overview": "Tai nghe chụp tai RGB, âm thanh sống động, có micro đàm thoại.",
+  "badges": ["RGB", "Mic rời", "Đệm tai êm"],
+  "specs": [
+    { "title": "Âm thanh", "items": [
+      { "label": "Driver", "value": "50mm (demo)" },
+      { "label": "Trở kháng", "value": "32Ω (demo)" }
+    ]},
+    { "title": "Kết nối", "items": [
+      { "label": "Giao tiếp", "value": "USB / 3.5mm (tuỳ phiên bản)" }
+    ]}
+  ],
+  "promos": ["Mút lọc âm (demo)"],
+  "gallery": ["assets/img/tainghe.png"],
+  "stock": true,
+  "rating": 4.1
+}
+

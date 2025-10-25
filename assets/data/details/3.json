@@ -1,0 +1,22 @@
+{
+  "overview": "Apple Watch Series 11 mỏng nhẹ, theo dõi sức khỏe và luyện tập.",
+  "badges": ["OLED", "GPS", "Chống nước"],
+  "specs": [
+    { "title": "Màn hình", "items": [
+      { "label": "Kích thước", "value": "42mm OLED" },
+      { "label": "Độ sáng", "value": "Cao, hiển thị ngoài trời tốt" }
+    ]},
+    { "title": "Theo dõi sức khỏe", "items": [
+      { "label": "Cảm biến", "value": "Nhịp tim, SpO2, ECG (tùy thị trường)" }
+    ]},
+    { "title": "Pin & sạc", "items": [
+      { "label": "Thời lượng", "value": "Lên đến 18 giờ" },
+      { "label": "Sạc", "value": "Sạc từ tính" }
+    ]}
+  ],
+  "promos": ["Tặng dây đeo thể thao (demo)"],
+  "gallery": ["assets/img/apw.png"],
+  "stock": true,
+  "rating": 4.5
+}
+

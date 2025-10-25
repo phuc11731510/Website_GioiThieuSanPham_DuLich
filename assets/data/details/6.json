@@ -1,0 +1,22 @@
+{
+  "overview": "Máy tính bảng Galaxy Tab S11 5G, màn hình lớn cho giải trí và công việc.",
+  "badges": ["5G", "Mỏng nhẹ"],
+  "specs": [
+    { "title": "Màn hình", "items": [
+      { "label": "Kích thước", "value": "11 inch" },
+      { "label": "Tấm nền", "value": "AMOLED / LCD (tuỳ phiên bản)" }
+    ]},
+    { "title": "Hiệu năng", "items": [
+      { "label": "RAM / ROM", "value": "12GB / 128GB" },
+      { "label": "Khe thẻ", "value": "Hỗ trợ (tuỳ phiên bản)" }
+    ]},
+    { "title": "Pin", "items": [
+      { "label": "Dung lượng", "value": "≈ 8.000–8.500 mAh (demo)" }
+    ]}
+  ],
+  "promos": ["Tặng bao da (demo)"],
+  "gallery": ["assets/img/tablet.png"],
+  "stock": true,
+  "rating": 4.3
+}
+

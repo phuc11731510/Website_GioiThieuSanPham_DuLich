@@ -1,0 +1,21 @@
+{
+  "overview": "Galaxy S25 Ultra 5G cấu hình cao, camera đa tiêu cự, hỗ trợ bút S‑Pen (tuỳ phiên bản).",
+  "badges": ["5G", "LTPO", "S‑Pen"],
+  "specs": [
+    { "title": "Màn hình", "items": [
+      { "label": "Kích thước", "value": "≈ 6.8 inch QHD+" },
+      { "label": "Công nghệ", "value": "LTPO AMOLED, 1–120Hz (demo)" }
+    ]},
+    { "title": "Hiệu năng", "items": [
+      { "label": "RAM / ROM", "value": "12GB / 1TB" }
+    ]},
+    { "title": "Camera", "items": [
+      { "label": "Chính", "value": "200MP (demo)" }
+    ]}
+  ],
+  "promos": ["Tặng ốp lưng (demo)"],
+  "gallery": ["assets/img/s25.png"],
+  "stock": true,
+  "rating": 4.6
+}
+

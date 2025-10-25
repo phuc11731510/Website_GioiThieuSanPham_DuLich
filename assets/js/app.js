@@ -40,9 +40,9 @@ function productCard(p) {
   }
   return `
     <div class="col-6 col-md-4 col-lg-3">
-      <div class="p-card h-100">
+      <div class="p-card h-100" id="card">
         <div class="p-media">
-          <img src="${p.img}" alt="${p.title}">
+          <a href="#"><img src="${p.img}" alt="${p.title}"></a>
         </div>
         <div class="p-body">
           <h6 class="p-title">${p.title}</h6>
@@ -51,8 +51,7 @@ function productCard(p) {
           ${s}
           ${renderBadge(p.tags)}
           <div class="p-actions">
-            <button class="btn btn-warning btn-sm" data-add="${p.id}">Thêm</button>
-            <button class="btn btn-ghost btn-sm" data-qv="${p.id}" data-bs-toggle="modal" data-bs-target="#quickView">Xem</button>
+            <button class="btn btn-warning btn-sm" data-qv="${p.id}" data-bs-toggle="modal" data-bs-target="#quickView" style="color: #000;">Xem</button>
           </div>
         </div>
       </div>
@@ -86,17 +85,7 @@ function initHome() {
   mount('#grid-sale', (p) => p.tags.includes('sale'));
 
   // Delegation for add & quick view
-  document.body.addEventListener('click', (e) => {
-    const addId = e.target.getAttribute('data-add');
-    const qvId = e.target.getAttribute('data-qv');
-    if (addId) {
-      addToCart(+addId);
-      toast('Đã thêm vào giỏ');
-    }
-    if (qvId) {
-      quickView(+qvId);
-    }
-  });
+  document.body.addEventListener('click', (e) => { const btn = e.target.closest('[data-qv]'); if (btn) { const id = Number(btn.getAttribute('data-qv')); if (!Number.isNaN(id)) quickView(id); } });
 
   // Countdown 48h
   const end = Date.now() + 48 * 3600 * 1000;
@@ -139,13 +128,7 @@ function initList() {
     limit += 4;
     render();
   };
-  document.body.addEventListener('click', (e) => {
-    const id = e.target.getAttribute('data-add');
-    if (id) {
-      addToCart(+id);
-      toast('Đã thêm vào giỏ');
-    }
-  });
+  document.body.addEventListener('click', (e) => { const btn = e.target.closest('[data-qv]'); if (btn) { const id = Number(btn.getAttribute('data-qv')); if (!Number.isNaN(id)) quickView(id); } });
 }
 
 // Giỏ hàng
@@ -243,8 +226,10 @@ function quickView(id) {
     body.innerHTML = `
       <div class="row g-3">
         <div class="col-md-6">
-          <div class="ratio ratio-4x3 bg-body-secondary rounded-4 d-flex align-items-center justify-content-center fs-1">
-            ${product.img}
+          <div class="qv-media bg-body-secondary rounded-4 d-flex align-items-center justify-content-center">
+            ${isAssetImage(product.img)
+              ? `<img src="${product.img}" alt="${product.title}" class="qv-img">`
+              : `<span class="display-3">${product.img || '🛍️'}</span>`}
           </div>
         </div>
         <div class="col-md-6">
@@ -254,7 +239,11 @@ function quickView(id) {
         </div>
       </div>
     `;
-    document.getElementById('qvAdd').onclick = () => addToCart(product.id);
+    const detailLink = document.querySelector('#quickView .modal-footer a[href="product.html"]');
+    if (detailLink) {
+      detailLink.href = `product.html?id=${product.id}`;
+      try { localStorage.setItem('last_product_id', String(product.id)); } catch (e) {}
+    }
   }
 }
 
@@ -291,10 +280,19 @@ function initDark() {
 
 // Boot
 document.addEventListener('DOMContentLoaded', () => {
-  loadCart();
-  syncCartCount();
-  initDark();
-  initHome();
-  initList();
-  initCart();
+  try { loadCart(); } catch {} 
+  try { syncCartCount(); } catch {} 
+  try { initDark(); } catch {} 
+  (typeof loadProducts === 'function' ? loadProducts() : Promise.resolve())
+    .then(() => {
+      try { initHome(); } catch {} 
+      try { initList(); } catch {} 
+    })
+    .finally(() => {
+      try { initCart(); } catch {} 
+    });
 });
+
+
+
+
