@@ -26,7 +26,7 @@ function productCard(p) {
     ? `<div class="p-oldprice" style="text-decoration: line-through; font-size: 14px;">${money(p.oldprice)}</div>`
     : '';
   return `
-    <div class="col-6 col-md-4 col-lg-3">
+    <div class="col-6 col-md-4 col-lg-4">
       <div class="p-card h-100">
         <div class="p-media">
           <img src="${p.img}" alt="${p.title}">

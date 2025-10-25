@@ -141,6 +141,9 @@ nav .nav-link {
   background-image: none;
   background-color: transparent;
   border-radius: var(--radius);
+  /*background-size: contain;
+  background-repeat: no-repeat;  
+  background-position: center */ 
 }
 .thumb {
   width: 80px;
@@ -192,6 +195,10 @@ nav .nav-link {
 }
 .p-body {
   padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: flex-start;
 }
 .p-title {
   font-weight: 600;
@@ -209,6 +216,7 @@ nav .nav-link {
   display: flex;
   gap: 0.5rem;
   margin-top: 0.5rem;
+  margin-top: auto;
 }
 .sale {
   height: 50px;
@@ -260,6 +268,12 @@ nav .nav-link {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
   transition: 0.3s ease-in-out;
   transform: translateY(-4px);
+  background-color: #fff;
+  color: #000;
+  border: 1.3px solid #000;
+}
+.row.g-4 {
+  margin: 50px;
 }
 @media (max-width: 576px) {
   .qv-media { height: 240px; }

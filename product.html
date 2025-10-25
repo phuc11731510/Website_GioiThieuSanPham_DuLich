@@ -14,22 +14,51 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body data-product-page="1">
-    <div class="container my-4">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="index.html">Trang chủ</a>
-          </li>
-          <li class="breadcrumb-item">
-            <a href="products.html">Sản phẩm</a>
-          </li>
-          <li class="breadcrumb-item active">Chi tiết</li>
-        </ol>
-      </nav>
+  <body data-product-page="1" class="theme-auto">
+    <div class="topbar py-1 small text-bg-dark">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div>Chào mừng đến Foxel — Khách hàng là thượng đế</div>
+        <div class="d-flex gap-3 align-items-center">
+          <button id="btnDark" class="btn btn-sm btn-outline-light">🌓 Dark</button>
+        </div>
+      </div>
+    </div>
+    <header class="py-3 border-bottom">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a class="navbar-brand fw-bold fs-3" href="index.html">
+            <img src="assets/img/fox.png" alt="fox" height="50px">
+        </a>
+        <h2 style="margin: 10px;">Foxel</h2>
+        <form class="search flex-grow-1 mx-3">
+          <div class="input-group">
+            <input class="form-control" placeholder="Bạn muốn tìm gì ?" />
+            <button class="btn btn-warning">Tìm</button>
+          </div>
+        </form>
+        <nav class="d-none d-md-flex gap-3">
+          <a href="index.html" class="nav-link">Trang chủ</a>
+          <a href="products.html" class="nav-link">Sản phẩm</a>
+          <a href="#" class="nav-link">Khuyến mãi</a>
+          <a href="#" class="nav-link">Tin tức</a>
+          <a href="#" class="nav-link">Liên hệ</a>
+        </nav>
+      </div>
+      <div class="mega border-top">
+        <div class="container d-flex gap-3 py-2 overflow-auto">
+          <a class="cat" href="#">💻 Laptop</a>
+          <a class="cat" href="#">🖥️ PC</a>
+          <a class="cat" href="#">⌨️ Bàn phím</a>
+          <a class="cat" href="#">🖱️ Chuột</a>
+          <a class="cat" href="#">🎧 Tai nghe</a>
+          <a class="cat" href="#">🖨️ Máy in</a>
+          <a class="cat" href="#">⚙️ Linh kiện</a>
+          <a class="cat" href="#">📱 Phụ kiện</a>
+        </div>
+      </div>
+    </header>
       <div class="row g-4">
         <div class="col-md-6">
-          <div class="ratio ratio-4x3 bg-body-secondary rounded-4 product-hero" id="pHero"></div>
+          <div class="ratio ratio-16x9 bg-body-secondary rounded-4 product-hero" id="pHero"></div>
           <div class="d-flex gap-2 mt-2" id="pThumbs"></div>
         </div>
         <div class="col-md-6">
