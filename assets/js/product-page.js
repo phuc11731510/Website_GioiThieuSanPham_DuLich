@@ -110,6 +110,7 @@ async function initProductPage() {
 document.addEventListener('DOMContentLoaded', () => {
   loadProducts().then(() => {
     try { initProductPage(); } catch {}
+    try { backtotop(); } catch {}
   }).finally(() => {
     try {
       const contact = document.querySelector('nav a[href="contact.html"]');
@@ -117,3 +118,24 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch {}
   });
 });
+
+function backtotop(){
+  let mybutton = document.getElementById('arrow');
+  mybutton.onclick = function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }; 
+function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  window.onscroll = function() {
+    scrollFunction();
+  };
+
+}

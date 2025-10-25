@@ -174,10 +174,10 @@ nav .nav-link {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: 0.3s ease-in-out;
 }
 .p-card:hover {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
-  transition: 0.3s ease-in-out;
   transform: translateY(-4px);
 }
 .p-media {
@@ -263,10 +263,10 @@ nav .nav-link {
   text-decoration: none;
   width: 130px;
   margin-left: 30px;
+  transition: 0.3s ease-in-out;
 }
 .swiper-wrapper a div:hover {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
-  transition: 0.3s ease-in-out;
   transform: translateY(-4px);
   background-color: #fff;
   color: #000;
@@ -290,6 +290,38 @@ select:focus {
 }
 input[type="checkbox"] {
   accent-color: #ffc107; 
+}
+textarea:focus {
+  border-color: #ffc107 !important;
+  box-shadow: 0 0 0 1px rgba(255, 193, 7, 0.25) !important;
+}
+.social-media img {
+  height: 50px;
+}
+.social-media {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.social-media a{
+  transition: 0.3s ease-in-out;
+}
+.social-media a:hover {
+  box-shadow: 0 0 25px cyan;
+  border-radius: 100%;
+}
+#contact img {
+  margin-top: 10px;
+  height: 40px;
+}
+#arrow {
+  display: none; 
+  position: fixed; 
+  bottom: 20px;
+  right: 30px;
+  z-index: 99; 
+  cursor: pointer;
+  height: 50px;
 }
 @media (max-width: 576px) {
   .qv-media { height: 240px; }
