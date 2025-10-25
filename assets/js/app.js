@@ -51,7 +51,7 @@ function productCard(p) {
           ${s}
           ${renderBadge(p.tags)}
           <div class="p-actions">
-            <button class="btn btn-warning btn-sm" data-qv="${p.id}" data-bs-toggle="modal" data-bs-target="#quickView" style="color: #000;">Xem</button>
+            <button class="btn btn-warning btn-sm" data-qv="${p.id}" data-bs-toggle="modal" data-bs-target="#quickView" style="color: #000;">Xem chi tiết sản phẩm</button>
           </div>
         </div>
       </div>
