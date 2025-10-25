@@ -108,6 +108,12 @@ async function initProductPage() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadProducts().then(() => { try { initProductPage(); } catch {} });
+  loadProducts().then(() => {
+    try { initProductPage(); } catch {}
+  }).finally(() => {
+    try {
+      const contact = document.querySelector('nav a[href="contact.html"]');
+      if (contact) contact.textContent = 'Liên hệ';
+    } catch {}
+  });
 });
-
