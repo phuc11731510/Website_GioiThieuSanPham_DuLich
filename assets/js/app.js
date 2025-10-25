@@ -18,8 +18,6 @@ async function loadProducts() {
   }
 }
 
-// Format tiền
-
 function renderBadge(tags) {
   if (tags.includes('new')) {
     return '<img src="assets/img/new.png" alt="New" class="sale">';
@@ -42,9 +40,9 @@ function productCard(p) {
   }
   return `
     <div class="col-6 col-md-4 col-lg-3">
-      <div class="p-card h-100">
+      <div class="p-card h-100" id="card">
         <div class="p-media">
-          <img src="${p.img}" alt="${p.title}">
+          <a href="#"><img src="${p.img}" alt="${p.title}"></a>
         </div>
         <div class="p-body">
           <h6 class="p-title">${p.title}</h6>
@@ -53,8 +51,7 @@ function productCard(p) {
           ${s}
           ${renderBadge(p.tags)}
           <div class="p-actions">
-
-            <button class="btn btn-ghost btn-sm" data-qv="${p.id}" data-bs-toggle="modal" data-bs-target="#quickView">Xem</button>
+            <button class="btn btn-warning btn-sm" data-qv="${p.id}" data-bs-toggle="modal" data-bs-target="#quickView" style="color: #000;">Xem</button>
           </div>
         </div>
       </div>

@@ -89,6 +89,9 @@ body {
 header .container {
   margin-bottom: 10px;
 }
+footer {
+  background-color: #132440;
+}
 footer .link-secondary {
   text-decoration: none;
 }
@@ -163,11 +166,16 @@ nav .nav-link {
 }
 /* Product cards */
 .p-card {
-  border: 1px solid #eee;
+  border: 1px solid #bbb;
   border-radius: var(--radius);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+.p-card:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease-in-out;
+  transform: translateY(-4px);
 }
 .p-media {
   height: 300px;
@@ -234,6 +242,24 @@ nav .nav-link {
   height: 100%;
   object-fit: contain;
   display: block;
+}
+.swiper-wrapper a {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  text-decoration: none;
+}
+.swiper-wrapper a div {
+  background-color: #ffc107;
+  color: #000;
+  margin: 10px 0;
+  text-decoration: none;
+  width: 130px;
+  margin-left: 30px;
+}
+.swiper-wrapper a div:hover {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease-in-out;
+  transform: translateY(-4px);
 }
 @media (max-width: 576px) {
   .qv-media { height: 240px; }

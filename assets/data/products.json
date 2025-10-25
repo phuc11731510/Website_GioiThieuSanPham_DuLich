@@ -1,5 +1,5 @@
 ﻿[
-  { "id": 1, "title": "Laptop Lenovo Gaming Legion 5 15IRX10 - 83LY00A6VN", "price": 32990000, "cat": "laptop", "tags": ["new"], "img": "assets/img/legion-lenovo.png" },
+    { "id": 1, "title": "Laptop Lenovo Gaming Legion 5 15IRX10 - 83LY00A6VN", "price": 32990000, "cat": "laptop", "tags": ["new"], "img": "assets/img/legion-lenovo.png" },
     { "id": 2, "title": "Laptop Asus TUF Gaming A15 FA507NVR - LP007W", "price": 26190000, "cat": "laptop", "tags": ["hot"], "img": "assets/img/tuf.png" },
     { "id": 3, "title": "Apple Watch Series 11 GPS 42mm viền nhôm dây thể thao", "price": 1320000, "oldprice": 1400000, "cat": "audio", "tags": ["sale"], "img": "assets/img/apw.png" },
     { "id": 4, "title": "Bàn Phím Cơ Kết Nối Dây Type-C KA6406", "price": 590000, "cat": "accessory", "tags": ["new"], "img": "assets/img/keyboard.png" },
