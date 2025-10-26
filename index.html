@@ -15,9 +15,14 @@
   <body class="theme-auto">
     <div class="topbar py-1 small text-bg-dark">
       <div class="container d-flex justify-content-between align-items-center">
-        <div>Chào mừng đến Foxel — Khách hàng là thượng đế</div>
+        <div data-lang-key="topbarWelcome">Chào mừng đến Foxel — Khách hàng là thượng đế</div>
         <div class="d-flex gap-3 align-items-center">
-          <button id="btnDark" class="btn btn-sm btn-outline-light">🌓 Dark</button>
+          
+          <div class="d-flex gap-2">
+            <button class="btn btn-sm btn-outline-light" onclick="setLanguage('vi')">VI</button>
+            <button class="btn btn-sm btn-outline-light" onclick="setLanguage('en')">EN</button>
+          </div>
+          <button id="btnDark" class="btn btn-sm btn-outline-light" data-lang-key="btnTheme">🌓 Chế độ tối</button>
         </div>
       </div>
     </div>
@@ -29,27 +34,27 @@
         <h2 style="margin: 10px;">Foxel</h2>
         <form class="search flex-grow-1 mx-3">
           <div class="input-group">
-            <input class="form-control" placeholder="Bạn muốn tìm gì ?" />
-            <button class="btn btn-warning">Tìm</button>
+            <input class="form-control" placeholder="Bạn muốn tìm gì ?" data-lang-key="searchPlaceholder" />
+            <button class="btn btn-warning" type="button" data-lang-key="btnSearch" id="search">Tìm</button>
           </div>
         </form>
         <nav class="d-none d-md-flex gap-3">
-          <a href="index.html" class="nav-link active">Trang chủ</a>
-          <a href="products.html" class="nav-link">Sản phẩm</a>
-          <a href="news.html" class="nav-link">Tin tức</a>
-          <a href="contact.html" class="nav-link">Liên hệ</a>
+          <a href="index.html" class="nav-link active" data-lang-key="navHome">Trang chủ</a>
+          <a href="products.html" class="nav-link" data-lang-key="navProducts">Sản phẩm</a>
+          <a href="news.html" class="nav-link" data-lang-key="navNews">Tin tức</a>
+          <a href="contact.html" class="nav-link" data-lang-key="navContact">Liên hệ</a>
         </nav>
       </div>
       <div class="mega border-top">
         <div class="container d-flex gap-3 py-2 overflow-auto">
-          <a class="cat" href="#">💻 Laptop</a>
-          <a class="cat" href="#">🖥️ PC</a>
-          <a class="cat" href="#">⌨️ Bàn phím</a>
-          <a class="cat" href="#">🖱️ Chuột</a>
-          <a class="cat" href="#">🎧 Tai nghe</a>
-          <a class="cat" href="#">🖨️ Máy in</a>
-          <a class="cat" href="#">⚙️ Linh kiện</a>
-          <a class="cat" href="#">📱 Phụ kiện</a>
+          <a class="cat" href="#" data-lang-key="catLaptop">💻 Laptop</a>
+          <a class="cat" href="#" data-lang-key="catPC">🖥️ PC</a>
+          <a class="cat" href="#" data-lang-key="catKeyboard">⌨️ Bàn phím</a>
+          <a class="cat" href="#" data-lang-key="catMouse">🖱️ Chuột</a>
+          <a class="cat" href="#" data-lang-key="catHeadphone">🎧 Tai nghe</a>
+          <a class="cat" href="#" data-lang-key="catPrinter">🖨️ Máy in</a>
+          <a class="cat" href="#" data-lang-key="catComponent">⚙️ Linh kiện</a>
+          <a class="cat" href="#" data-lang-key="catAccessory">📱 Phụ kiện</a>
         </div>
       </div>
     </header>
@@ -58,16 +63,16 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide hero hero-1 d-flex align-items-center p-5 rounded-4">
             <div>
-              <h2 class="display-6 fw-bold">Laptop Gaming RTX 40 Series</h2>
-              <p>Hiệu năng vượt trội — ưu đãi đến 15%.</p>
-              <a href="products.html" class="btn btn-lg btn-warning btn-outline-dark" style="width: 130px; text-align: center;">Mua ngay</a>
+              <h2 class="display-6 fw-bold" data-lang-key="hero1Title">Laptop Gaming RTX 40 Series</h2>
+              <p data-lang-key="hero1Desc">Hiệu năng vượt trội — ưu đãi đến 15%.</p>
+              <a href="products.html" class="btn btn-lg btn-warning btn-outline-dark" style="width: 130px; text-align: center;" data-lang-key="hero1Btn">Mua ngay</a>
             </div>
           </div>
           <div class="swiper-slide hero hero-2 d-flex align-items-center p-5 rounded-4">
             <div>
-              <h2 class="display-6 fw-bold">Bàn Phím Cơ Gaming không dây</h2>
-              <p>LED 7 màu — chống ồn</p>
-              <a href="products.html#audio" class="btn btn-lg btn-warning btn-outline-dark" style="width: 130px; text-align: center;">Khám phá</a>
+              <h2 class="display-6 fw-bold" data-lang-key="hero2Title">Bàn Phím Cơ Gaming không dây</h2>
+              <p data-lang-key="hero2Desc">LED 7 màu — chống ồn</p>
+              <a href="products.html#audio" class="btn btn-lg btn-warning btn-outline-dark" style="width: 130px; text-align: center;" data-lang-key="hero2Btn">Khám phá</a>
             </div>
           </div>
         </div>
@@ -82,8 +87,8 @@
                 <img src="assets/img/flashsale.png" alt="">
             </div>
             <div class="card-body">
-              <h5 class="card-title">Flash Sale 48h</h5>
-              <p class="card-text small">Ngoại vi giảm sốc.</p>
+              <h5 class="card-title" data-lang-key="promo1Title">Flash Sale 48h</h5>
+              <p class="card-text small" data-lang-key="promo1Desc">Ngoại vi giảm sốc.</p>
             </div>
           </a>
         </div>
@@ -93,8 +98,8 @@
                 <img src="assets/img/pc.png" alt="">
             </div>
             <div class="card-body">
-              <h5 class="card-title">Build PC</h5>
-              <p class="card-text small">Lắp ráp theo yêu cầu.</p>
+              <h5 class="card-title" data-lang-key="promo2Title">Build PC</h5>
+              <p class="card-text small" data-lang-key="promo2Desc">Lắp ráp theo yêu cầu.</p>
             </div>
           </a>
         </div>
@@ -104,8 +109,8 @@
                 <img src="assets/img/swapnew.png" alt="">
             </div>
             <div class="card-body">
-              <h5 class="card-title">Thu cũ đổi mới</h5>
-              <p class="card-text small">Ưu đãi thêm 3 triệu.</p>
+              <h5 class="card-title" data-lang-key="promo3Title">Thu cũ đổi mới</h5>
+              <p class="card-text small" data-lang-key="promo3Desc">Ưu đãi thêm 3 triệu.</p>
             </div>
           </a>
         </div>
@@ -113,16 +118,16 @@
     </section>
     <section class="container my-5">
       <div class="d-flex justify-content-between align-items-end mb-3">
-        <h3 class="mb-0">Sản phẩm nổi bật</h3>
+        <h3 class="mb-0" data-lang-key="featuredTitle">Sản phẩm nổi bật</h3>
         <ul class="nav nav-pills gap-1" id="pills-tab">
           <li class="nav-item">
-            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab-new">Mới</button>
+            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tab-new" data-lang-key="tabNew">Mới</button>
           </li>
           <li class="nav-item">
-            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-hot">Hot</button>
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-hot" data-lang-key="tabHot">Hot</button>
           </li>
           <li class="nav-item">
-            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-sale">Đang giảm</button>
+            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tab-sale" data-lang-key="tabSale">Đang giảm</button>
           </li>
         </ul>
       </div>
@@ -138,9 +143,8 @@
         </div>
       </div>
     </section>
-    <!-- Removed promo sale block for showcase-only mode -->
     <section class="container my-5">
-      <h3 class="mb-3">Thương hiệu</h3>
+      <h3 class="mb-3" data-lang-key="brandsTitle">Thương hiệu</h3>
       <div class="swiper brand-swiper">
         <div class="swiper-wrapper">
           <a href="#"><div class="swiper-slide brand">ASUS</div></a>
@@ -159,18 +163,18 @@
         <div class="row g-4">
           <div class="col-md-4">
             <h5 class="text-light">Foxel</h5>
-            <p class="small text-light">Trang giới thiệu thiết bị công nghệ chính hãng.</p>
+            <p class="small text-light" data-lang-key="footerDesc">Trang giới thiệu thiết bị công nghệ chính hãng.</p>
           </div>
           <div class="col-md-4">
-            <h6 class="text-light">Thông tin</h6>
+            <h6 class="text-light" data-lang-key="footerInfoTitle">Thông tin</h6>
             <ul class="list-unstyled small text-light">
-              <li><a class="link-secondary" href="#">Giới thiệu</a></li>
-              <li><a class="link-secondary" href="#">Tuyển dụng</a></li>
-              <li><a class="link-secondary" href="#">Hệ thống cửa hàng</a></li>
+              <li><a class="link-secondary" href="#" data-lang-key="footerInfoAbout">Giới thiệu</a></li>
+              <li><a class="link-secondary" href="#" data-lang-key="footerInfoCareers">Tuyển dụng</a></li>
+              <li><a class="link-secondary" href="#" data-lang-key="footerInfoStores">Hệ thống cửa hàng</a></li>
             </ul>
           </div>
           <div class="col-md-4 text-light">
-            <h6 class="text-light">Liên hệ</h6>
+            <h6 class="text-light" data-lang-key="footerContactTitle">Liên hệ</h6>
             <p class="small mb-1">0999999999</p>
             <p class="small mb-0">support@foxel.vn</p>
             <a href=""><img src="assets/img/fb.png" alt="facebook"></a>
@@ -180,7 +184,7 @@
         </div>
         <div class="d-flex justify-content-between pt-3 mt-3 border-top small text-light">
           <span>© 2025 Foxel</span>
-          <a href="#" class="link-secondary text-light">Điều khoản</a>
+          <a href="#" class="link-secondary text-light" data-lang-key="footerTerms">Điều khoản</a>
         </div>
       </div>
     </footer>
@@ -189,18 +193,22 @@
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Xem nhanh</h5>
+            <h5 class="modal-title" data-lang-key="modalQuickView">Xem nhanh</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body" id="qvBody"></div>
           <div class="modal-footer">
-            <a href="product.html" class="btn btn-outline-secondary">Xem chi tiết</a>
+            <a href="product.html" class="btn btn-outline-secondary" data-lang-key="modalViewDetail">Xem chi tiết</a>
           </div>
         </div>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script src="assets/js/languages.js"></script>
+    <script src="assets/js/lang-switcher.js"></script>
     <script src="assets/js/home.js"></script>
   </body>
 </html>

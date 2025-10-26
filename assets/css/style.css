@@ -158,6 +158,12 @@ nav .nav-link {
   border-bottom: 1px dashed #eee;
 }
 /* Dark mode (sáng tạo) */
+:root[data-bs-theme="dark"] .nav-link::after {
+  background: #dc3545;
+}
+:root[data-bs-theme="dark"] .nav-link:hover {
+  color: #fff;
+}
 :root[data-bs-theme="dark"] .mega .cat {
   background: #222;
   color: #ddd;
@@ -168,6 +174,72 @@ nav .nav-link {
 }
 :root[data-bs-theme="dark"] .thumb {
   background: #333;
+}
+:root[data-bs-theme="dark"] .nav-item button {
+  color: #F9F5F0;
+}
+:root[data-bs-theme="dark"] .nav-item .active {
+  color: #F9F5F0;
+  background-color: #dc3545;
+}
+:root[data-bs-theme="dark"] nav .active {
+  color: #F9F5F0;
+  background-color: #dc3545;
+}
+:root[data-bs-theme="dark"] #search {
+  color: #F9F5F0;
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+}
+:root[data-bs-theme="dark"] div .cat {
+  color: #F9F5F0;
+  transition: 0.3s ease-in-out;
+}
+:root[data-bs-theme="dark"] div .cat:hover {
+  color: #000;
+  background-color: #fff;
+}
+:root[data-bs-theme="dark"] .swiper-wrapper a div {
+  color: #fff;
+  background-color: #dc3545;
+}
+:root[data-bs-theme="dark"] .swiper-wrapper a div:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1.3px solid #000;
+}
+:root[data-bs-theme="dark"] #buy {
+  background-color: transparent;
+  color: #fff;
+  border: 1.3px solid #fff;
+  transition: 0.3s ease-in-out;
+}
+:root[data-bs-theme="dark"] #buy:hover {
+  background-color: #fff;
+  color: #000;
+}
+:root[data-bs-theme="dark"] select:focus {
+  border-color: #dc3545 !important;
+}
+:root[data-bs-theme="dark"] #applyFilter {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  color: #fff;
+}
+:root[data-bs-theme="dark"] .hero-post-body {
+  color: #fff;
+}
+:root[data-bs-theme="dark"] .link-post a {
+  color: #fff;
+}
+:root[data-bs-theme="dark"] .p-actions a {
+  color: #000;
+}
+:root[data-bs-theme="dark"] .card-body div a {
+  color: #000;
+}
+:root[data-bs-theme="dark"] .card-body div #cat:hover {
+  background-color: #fff;
 }
 .thumb:hover { cursor: pointer; }
 /* Product cards */
@@ -351,6 +423,9 @@ textarea:focus {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
   transform: translateY(-4px);
   background-color: transparent;
+}
+.link-post a{
+  color: #000;
 }
 @media (max-width: 576px) {
   .qv-media { height: 240px; }

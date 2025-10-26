@@ -15,9 +15,14 @@
   <body class="theme-auto">
     <div class="topbar py-1 small text-bg-dark">
       <div class="container d-flex justify-content-between align-items-center">
-        <div>Chào mừng đến Foxel — Khách hàng là thượng đế</div>
+        <div data-lang-key="topbarWelcome">Chào mừng đến Foxel — Khách hàng là thượng đế</div>
         <div class="d-flex gap-3 align-items-center">
-          <button id="btnDark" class="btn btn-sm btn-outline-light">🌓 Dark</button>
+          
+          <div class="d-flex gap-2">
+            <button class="btn btn-sm btn-outline-light" onclick="setLanguage('vi')">VI</button>
+            <button class="btn btn-sm btn-outline-light" onclick="setLanguage('en')">EN</button>
+          </div>
+          <button id="btnDark" class="btn btn-sm btn-outline-light" data-lang-key="btnTheme">🌓 Chế độ tối</button>
         </div>
       </div>
     </div>
@@ -29,27 +34,27 @@
         <h2 style="margin: 10px;">Foxel</h2>
         <form class="search flex-grow-1 mx-3">
           <div class="input-group">
-            <input class="form-control" placeholder="Bạn muốn tìm gì ?" />
-            <button class="btn btn-warning">Tìm</button>
+            <input class="form-control" placeholder="Bạn muốn tìm gì ?" data-lang-key="searchPlaceholder" />
+            <button class="btn btn-warning" type="button" data-lang-key="btnSearch" id="search">Tìm</button>
           </div>
         </form>
         <nav class="d-none d-md-flex gap-3">
-          <a href="index.html" class="nav-link">Trang chủ</a>
-          <a href="products.html" class="nav-link">Sản phẩm</a>
-          <a href="news.html" class="nav-link active">Tin tức</a>
-          <a href="contact.html" class="nav-link">Liên hệ</a>
+          <a href="index.html" class="nav-link" data-lang-key="navHome">Trang chủ</a>
+          <a href="products.html" class="nav-link" data-lang-key="navProducts">Sản phẩm</a>
+          <a href="news.html" class="nav-link active" data-lang-key="navNews">Tin tức</a>
+          <a href="contact.html" class="nav-link" data-lang-key="navContact">Liên hệ</a>
         </nav>
       </div>
       <div class="mega border-top">
         <div class="container d-flex gap-3 py-2 overflow-auto">
-          <a class="cat" href="#">💻 Laptop</a>
-          <a class="cat" href="#">🖥️ PC</a>
-          <a class="cat" href="#">⌨️ Bàn phím</a>
-          <a class="cat" href="#">🖱️ Chuột</a>
-          <a class="cat" href="#">🎧 Tai nghe</a>
-          <a class="cat" href="#">🖨️ Máy in</a>
-          <a class="cat" href="#">⚙️ Linh kiện</a>
-          <a class="cat" href="#">📱 Phụ kiện</a>
+          <a class="cat" href="#" data-lang-key="catLaptop">💻 Laptop</a>
+          <a class="cat" href="#" data-lang-key="catPC">🖥️ PC</a>
+          <a class="cat" href="#" data-lang-key="catKeyboard">⌨️ Bàn phím</a>
+          <a class="cat" href="#" data-lang-key="catMouse">🖱️ Chuột</a>
+          <a class="cat" href="#" data-lang-key="catHeadphone">🎧 Tai nghe</a>
+          <a class="cat" href="#" data-lang-key="catPrinter">🖨️ Máy in</a>
+          <a class="cat" href="#" data-lang-key="catComponent">⚙️ Linh kiện</a>
+          <a class="cat" href="#" data-lang-key="catAccessory">📱 Phụ kiện</a>
         </div>
       </div>
     </header>
@@ -59,12 +64,12 @@
             <h2 class="h4 fw-bold mb-3">Tin nổi bật</h2>
           <div class="row g-4">
             <div class="col-lg-8">
-              <a href="#" class="card hero-post-lg lift text-white text-decoration-none">
+              <a href="#" class="card hero-post-lg lift text-decoration-none">
                 <img src="assets/img/macbook.png" class="hero-post-img" alt="Tin nổi bật" height="600px">
                 <div class="hero-post-body p-4">
                   <span class="badge bg-warning text-dark mb-2">Đánh giá</span>
-                  <h3 class="h4 text-dark">Đánh giá chi tiết Laptop MacBook Pro M1 14 Inch (M1-Pro/16/512): Liệu có xứng đáng với giá tiền?</h3>
-                  <p class="d-none d-sm-block text-dark">Khi Apple lần đầu ra mắt MacBook Pro M1, điều khiến giới công nghệ chú ý nhất chính là hiệu năng vượt trội mà con chip M1 mang lại. Không chỉ là bước chuyển mình từ Intel sang Apple Silicon, M1 còn thể hiện tầm nhìn dài hạn của Apple trong việc kiểm soát toàn bộ hệ sinh thái — từ phần cứng đến phần mềm....</p>
+                  <h3 class="h4">Đánh giá chi tiết Laptop MacBook Pro M1 14 Inch : Liệu có xứng đáng với giá tiền?</h3>
+                  <p class="d-none d-sm-block">Khi Apple lần đầu ra mắt MacBook Pro M1, điều khiến giới công nghệ chú ý nhất chính là hiệu năng vượt trội mà con chip M1 mang lại. Không chỉ là bước chuyển mình từ Intel sang Apple Silicon, M1 còn thể hiện tầm nhìn dài hạn của Apple trong việc kiểm soát toàn bộ hệ sinh thái — từ phần cứng đến phần mềm....</p>
                 </div>
               </a>
             </div>
@@ -100,11 +105,11 @@
           </div>
         </section>
       </div>
-      <section>
+      <section class="link-post">
           <div class="row g-4">
             <div class="col-lg-8">
               <h2 class="h4 fw-bold mb-3">Tin mới nhất</h2>
-              <a href="#" class=" text-decoration-none text-dark">
+              <a href="#" class=" text-decoration-none">
                 <div class="row g-4">
                   <div class="col-md-6">
                     <div class="p-card h-100">
@@ -123,7 +128,7 @@
                   </div>
                 </a>
                 <div class="col-md-6">
-                  <a href="#" class="text-decoration-none text-dark">
+                  <a href="#" class="text-decoration-none">
                     <div class="p-card h-100">
                       <div class="p-media">
                         <img src="assets/img/deepseek.png" alt="Bài viết 2">
@@ -140,7 +145,7 @@
                   </a>
                 </div>
                 <div class="col-md-6">
-                  <a href="#" class="text-decoration-none text-dark">
+                  <a href="#" class="text-decoration-none">
                     <div class="p-card h-100">
                       <div class="p-media">
                         <img src="assets/img/mouse.png" alt="Bài viết 3">
@@ -157,7 +162,7 @@
                   </a>
                 </div>
                 <div class="col-md-6">
-                  <a href="#" class="text-decoration-none text-dark">
+                  <a href="#" class="text-decoration-none">
                     <div class="p-card h-100">
                       <div class="p-media">
                         <img src="assets/img/clound.png" alt="Bài viết 4">
@@ -216,7 +221,7 @@
                   <div class="card-header bg-dark text-white fw-bold">Chủ đề</div>
                   <div class="card-body">
                     <div class="d-flex flex-wrap gap-2">
-                      <a classa="cat" href="#">💻 Laptop</a>
+                      <a classa="cat" id="cat" href="#">💻 Laptop</a>
                       <a class="cat" href="#">🖥️ PC</a>
                       <a class="cat" href="#">⌨️ Bàn phím</a>
                       <a class="cat" href="#">🖱️ Chuột</a>

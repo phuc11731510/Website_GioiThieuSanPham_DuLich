@@ -12,9 +12,14 @@
   <body class="theme-auto">
     <div class="topbar py-1 small text-bg-dark">
       <div class="container d-flex justify-content-between align-items-center">
-        <div>Chào mừng đến Foxel — Khách hàng là thượng đế</div>
+        <div data-lang-key="topbarWelcome">Chào mừng đến Foxel — Khách hàng là thượng đế</div>
         <div class="d-flex gap-3 align-items-center">
-          <button id="btnDark" class="btn btn-sm btn-outline-light">🌓 Dark</button>
+          
+          <div class="d-flex gap-2">
+            <button class="btn btn-sm btn-outline-light" onclick="setLanguage('vi')">VI</button>
+            <button class="btn btn-sm btn-outline-light" onclick="setLanguage('en')">EN</button>
+          </div>
+          <button id="btnDark" class="btn btn-sm btn-outline-light" data-lang-key="btnTheme">🌓 Chế độ tối</button>
         </div>
       </div>
     </div>
@@ -26,27 +31,27 @@
         <h2 style="margin: 10px;">Foxel</h2>
         <form class="search flex-grow-1 mx-3">
           <div class="input-group">
-            <input class="form-control" placeholder="Bạn muốn tìm gì ?" />
-            <button class="btn btn-warning">Tìm</button>
+            <input class="form-control" placeholder="Bạn muốn tìm gì ?" data-lang-key="searchPlaceholder" />
+            <button class="btn btn-warning" type="button" data-lang-key="btnSearch" id="search">Tìm</button>
           </div>
         </form>
         <nav class="d-none d-md-flex gap-3">
-          <a href="index.html" class="nav-link">Trang chủ</a>
-          <a href="products.html" class="nav-link">Sản phẩm</a>
-          <a href="news.html" class="nav-link">Tin tức</a>
-          <a href="contact.html" class="nav-link active">Liên hệ</a>
+          <a href="index.html" class="nav-link" data-lang-key="navHome">Trang chủ</a>
+          <a href="products.html" class="nav-link" data-lang-key="navProducts">Sản phẩm</a>
+          <a href="news.html" class="nav-link" data-lang-key="navNews">Tin tức</a>
+          <a href="contact.html" class="nav-link active" data-lang-key="navContact">Liên hệ</a>
         </nav>
       </div>
       <div class="mega border-top">
         <div class="container d-flex gap-3 py-2 overflow-auto">
-          <a class="cat" href="#">💻 Laptop</a>
-          <a class="cat" href="#">🖥️ PC</a>
-          <a class="cat" href="#">⌨️ Bàn phím</a>
-          <a class="cat" href="#">🖱️ Chuột</a>
-          <a class="cat" href="#">🎧 Tai nghe</a>
-          <a class="cat" href="#">🖨️ Máy in</a>
-          <a class="cat" href="#">⚙️ Linh kiện</a>
-          <a class="cat" href="#">📱 Phụ kiện</a>
+          <a class="cat" href="#" data-lang-key="catLaptop">💻 Laptop</a>
+          <a class="cat" href="#" data-lang-key="catPC">🖥️ PC</a>
+          <a class="cat" href="#" data-lang-key="catKeyboard">⌨️ Bàn phím</a>
+          <a class="cat" href="#" data-lang-key="catMouse">🖱️ Chuột</a>
+          <a class="cat" href="#" data-lang-key="catHeadphone">🎧 Tai nghe</a>
+          <a class="cat" href="#" data-lang-key="catPrinter">🖨️ Máy in</a>
+          <a class="cat" href="#" data-lang-key="catComponent">⚙️ Linh kiện</a>
+          <a class="cat" href="#" data-lang-key="catAccessory">📱 Phụ kiện</a>
         </div>
       </div>
     </header>
@@ -135,6 +140,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/contact.js"></script>
     <script>
       document.getElementById('contactForm').addEventListener('submit', function (e) {
         e.preventDefault();
