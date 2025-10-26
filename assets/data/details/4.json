@@ -5,11 +5,16 @@
     { "title": "Bàn phím", "items": [
       { "label": "Switch", "value": "Red (tuyến tính)" },
       { "label": "Layout", "value": "Fullsize 104 phím" },
-      { "label": "Kết nối", "value": "USB‑C có dây" }
+      { "label": "Kết nối", "value": "USB‑C có dây" },
+      { "label": "Số lượng phím", "value": "63 phím" },
+      { "label": "Keycap", "value": "PBT Dyesub hoặc ABS+PBT Double-shot" },
+      { "label": "Màu sắc", "value": "Trắng, Đen, Hồng, Đen Trắng" },
+      { "label": "PIN", "value": "3000mAh" },
+      { "label": "Kích thước", "value": "290x100x39mm" }
     ]}
   ],
   "promos": ["Tặng keypuller (demo)"],
-  "gallery": ["assets/img/keyboard.png"],
+  "gallery": ["assets/img/keyboard.png", "assets/img/keyboard2.1.png", "assets/img/keyboard2.2.png" ],
   "stock": true,
   "rating": 4.2
 }

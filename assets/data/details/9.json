@@ -6,14 +6,20 @@
       { "label": "Kích thước", "value": "23.8 inch" },
       { "label": "Độ phân giải", "value": "1920 × 1080 (FHD)" },
       { "label": "Tần số quét", "value": "240Hz" },
-      { "label": "Phản hồi", "value": "0.3ms (MPRT) (demo)" }
+      { "label": "Phản hồi", "value": "0.3ms (MPRT)" },
+      { "label": "Loại màn hình", "value": "Phẳng" },
+      { "label": "Màn hình cảm ứng", "value": "Không cảm ứng" },
+      { "label": "Tấm nền", "value": "IPS" },
+      { "label": "Tần số quét", "value": "146Hz" },
+      { "label": "Độ phủ màu", "value": "125% sRGB, 90% DCI-P3" },
+      { "label": "Số lượng màu", "value": "16.7 triệu màu" }
     ]},
     { "title": "Kết nối", "items": [
       { "label": "Cổng", "value": "HDMI / DisplayPort (tuỳ phiên bản)" }
     ]}
   ],
-  "promos": ["Tặng cáp DisplayPort (demo)"],
-  "gallery": ["assets/img/tuf-watch.png"],
+  "promos": ["Tặng cáp DisplayPort"],
+  "gallery": ["assets/img/tuf-watch.png", "assets/img/tuf-watch1.png", "assets/img/tuf-watch2.png", "assets/img/tuf-watch3.png", "assets/img/tuf-watch4.png"],
   "stock": true,
   "rating": 4.4
 }

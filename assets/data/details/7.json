@@ -3,15 +3,24 @@
   "badges": ["RGB", "Mic rời", "Đệm tai êm"],
   "specs": [
     { "title": "Âm thanh", "items": [
-      { "label": "Driver", "value": "50mm (demo)" },
-      { "label": "Trở kháng", "value": "32Ω (demo)" }
+      { "label": "Thương hiệu", "value": "JBlue" },
+      { "label": "Kiểu kết nối", "value": "Có dây" },
+      { "label": "Loại tai nghe", "value": "Chụp tai" },
+      { "label": "Game chuyên dụng", "value": "Có" },
+      { "label": "Thiết bị âm thanh tương thích", "value": "Điện thoại, Laptop, PC" },
+      { "label": "Tần số tối đa", "value": "45000Hz" },
+      { "label": "Tần số tối thiểu", "value": "90Hz" },
+      { "label": "Độ nhạy", "value": "90dB" },
+      { "label": "Thể thao chuyên dụng", "value": "Không" },
+      { "label": "Loại phụ kiện headphone", "value": "Bộ chia âm thanh nổi" },
+      { "label": "Tính năng các loại tai nghe", "value": "Tích hợp micro, Cản tiếng ồn, Điều chỉnh âm lượng" }
     ]},
     { "title": "Kết nối", "items": [
       { "label": "Giao tiếp", "value": "USB / 3.5mm (tuỳ phiên bản)" }
     ]}
   ],
   "promos": ["Mút lọc âm (demo)"],
-  "gallery": ["assets/img/tainghe.png"],
+  "gallery": ["assets/img/tainghe.png", "assets/img/tainghe1.1.png", "assets/img/tainghe1.2.png", "assets/img/tainghe1.3.png", "assets/img/tainghe1.4.png", "assets/img/tainghe1.5.png"],
   "stock": true,
   "rating": 4.1
 }

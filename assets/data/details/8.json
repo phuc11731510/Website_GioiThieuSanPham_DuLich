@@ -4,17 +4,25 @@
   "specs": [
     { "title": "Màn hình", "items": [
       { "label": "Kích thước", "value": "≈ 6.8 inch QHD+" },
-      { "label": "Công nghệ", "value": "LTPO AMOLED, 1–120Hz (demo)" }
+      { "label": "Công nghệ", "value": "LTPO AMOLED, 1–120Hz" }
     ]},
     { "title": "Hiệu năng", "items": [
-      { "label": "RAM / ROM", "value": "12GB / 1TB" }
+      { "label": "RAM / ROM", "value": "12GB / 1TB" },
+      { "label": "Hệ điều hành", "value": "Androi 16" },
+      { "label": "Chip xử lý (CPU)", "value": "Exynos 2400 10 nhân" },
+      { "label": "Tốc độ xử lý", "value": "3.2GHz" },
+      { "label": "Dung lượng lưu trữ", "value": "128GB" }
     ]},
     { "title": "Camera", "items": [
-      { "label": "Chính", "value": "200MP (demo)" }
+      { "label": "Chính", "value": "200MP" },
+      { "label": "Quay phim camera sau", "value": "8K4320p@30fps" },
+      { "label": "Đèn Flash camera sau", "value": "CÓ" },
+      { "label": "Công nghệ màn hình", "value": "Dynamic AMOLED 2X" },
+      { "label": "Độ sáng tối đa", "value": "1900 nits" }
     ]}
   ],
-  "promos": ["Tặng ốp lưng (demo)"],
-  "gallery": ["assets/img/s25.png"],
+  "promos": ["Tặng ốp lưng"],
+  "gallery": ["assets/img/s25.png", "assets/img/s251.png", "assets/img/s252.png", "assets/img/s253.png", "assets/img/s254.png"],
   "stock": true,
   "rating": 4.6
 }

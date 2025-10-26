@@ -7,11 +7,19 @@
     ]},
     { "title": "Bàn phím", "items": [
       { "label": "Layout", "value": "96% (98 phím)" },
-      { "label": "Keycaps", "value": "PBT dye‑sub" }
+      { "label": "Keycaps", "value": "PBT dye‑sub" },
+      { "label": "Kết nối", "value": "USB, Bluetooth, 2.4G" },
+      { "label": "Mạch xuôi", "value": "5 pin hỗ trợ hotswap thay switch dễ dàng" },
+      { "label": "LED", "value": "RGB" },
+      { "label": "Phụ kiện", "value": "1 cáp USB A-C dài 1,8m" },
+      { "label": "PIN", "value": "3000mAh" },
+      { "label": "Switch", "value": "Cidoo Matt Grey" },
+      { "label": "Màu sắc", "value": "Trắng xám" },
+      { "label": "Hỗ trợ hệ điều hành", "value": "Windows, MacOS" }
     ]}
   ],
   "promos": ["Tặng receiver 2.4GHz (demo)"],
-  "gallery": ["assets/img/keyboard2.png"],
+  "gallery": ["assets/img/keyboard2.png", "assets/img/keyboard21.png", "assets/img/keyboard22.png", "assets/img/keyboard23.png"],
   "stock": true,
   "rating": 4.4
 }

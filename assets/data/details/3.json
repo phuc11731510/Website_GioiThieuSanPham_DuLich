@@ -1,21 +1,30 @@
 {
-  "overview": "Apple Watch Series 11 mỏng nhẹ, theo dõi sức khỏe và luyện tập.",
+  "overview": "Đồng Hồ Thông Minh Bluetooth Smart Watch X90 Ultra 2 mỏng nhẹ, theo dõi sức khỏe và luyện tập.",
   "badges": ["OLED", "GPS", "Chống nước"],
   "specs": [
     { "title": "Màn hình", "items": [
       { "label": "Kích thước", "value": "42mm OLED" },
-      { "label": "Độ sáng", "value": "Cao, hiển thị ngoài trời tốt" }
+      { "label": "Độ sáng", "value": "Cao, hiển thị ngoài trời tốt" },
+      { "label": "LCD", "value": "2.19 inch toàn màn hình" }
     ]},
     { "title": "Theo dõi sức khỏe", "items": [
       { "label": "Cảm biến", "value": "Nhịp tim, SpO2, ECG (tùy thị trường)" }
     ]},
     { "title": "Pin & sạc", "items": [
       { "label": "Thời lượng", "value": "Lên đến 18 giờ" },
-      { "label": "Sạc", "value": "Sạc từ tính" }
+      { "label": "Sạc", "value": "Sạc từ tính" },
+      { "label": "Sạc không dây", "value": "CÓ" }
+    ]},
+    { "title": "Vật liệu", "items": [
+      { "label": "Viền", "value": "Thép cao cấp" },
+      { "label": "", "value": "" },
+      { "label": "", "value": "" },
+      { "label": "", "value": "" },
+      { "label": "", "value": "" }
     ]}
   ],
   "promos": ["Tặng dây đeo thể thao (demo)"],
-  "gallery": ["assets/img/apw.png"],
+  "gallery": ["assets/img/apw.png", "assets/img/apw1.png", "assets/img/apw2.png", "assets/img/apw3.png", "assets/img/apw4.png"],
   "stock": true,
   "rating": 4.5
 }

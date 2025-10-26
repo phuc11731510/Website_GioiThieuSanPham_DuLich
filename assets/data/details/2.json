@@ -6,15 +6,19 @@
       { "label": "CPU", "value": "AMD Ryzen 7 (dòng 7000)" },
       { "label": "RAM", "value": "16GB DDR5" },
       { "label": "GPU", "value": "NVIDIA GeForce RTX 4060 8GB" },
-      { "label": "Lưu trữ", "value": "SSD 512GB NVMe" }
+      { "label": "Lưu trữ", "value": "SSD 512GB NVMe" },
+      { "label": "Độ phân giải", "value": "Full HD (1920 x 1080)" },
+      { "label": "Độ phủ màu", "value": "100% sRGB75, 35% Adobe RGB, 72% NTSC" },
+      { "label": "Đèn bàn phím", "value": "Đèn chuyển màu RGB - 1 vùng" },
+      { "label": "Công nghệ âm thanh", "value": "Dolby Atmos" }
     ]},
     { "title": "Màn hình", "items": [
       { "label": "Kích thước", "value": "15.6 inch FHD" },
       { "label": "Tần số quét", "value": "144Hz" }
     ]}
   ],
-  "promos": ["Tặng chuột gaming (demo)"],
-  "gallery": ["assets/img/tuf.png"],
+  "promos": ["Tặng chuột gaming"],
+  "gallery": ["assets/img/tuf.png", "assets/img/tuf1.1.png", "assets/img/tuf1.2.png", "assets/img/tuf1.3.png", "assets/img/tuf1.4.png", "assets/img/tuf1.5.png"],
   "stock": true,
   "rating": 4.6
 }

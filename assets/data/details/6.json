@@ -4,18 +4,26 @@
   "specs": [
     { "title": "Màn hình", "items": [
       { "label": "Kích thước", "value": "11 inch" },
-      { "label": "Tấm nền", "value": "AMOLED / LCD (tuỳ phiên bản)" }
+      { "label": "Tấm nền", "value": "AMOLED / LCD (tuỳ phiên bản)" },
+      { "label": "Công nghệ màn hình", "value": "TFT LCD (paper matte)" },
+      { "label": "Độ phân giải toàn màn hình", "value": "2200 x 1.440 pixel" }
     ]},
     { "title": "Hiệu năng", "items": [
       { "label": "RAM / ROM", "value": "12GB / 128GB" },
-      { "label": "Khe thẻ", "value": "Hỗ trợ (tuỳ phiên bản)" }
+      { "label": "Khe thẻ", "value": "Hỗ trợ (tuỳ phiên bản)" },
+      { "label": "Chip set", "value": "Kirin T80, Octa-core" },
+      { "label": "Hệ điều hành", "value": "Harmony0S 4.2" }
     ]},
     { "title": "Pin", "items": [
       { "label": "Dung lượng", "value": "≈ 8.000–8.500 mAh (demo)" }
+    ]},
+    { "title": "Camera", "items": [
+      { "label": "Camera sau", "value":"13 MP (khẩu độ f/1.8, AF)" },
+      { "label": "Camera trước", "value":"8 MP (khẩu độ f/2.2, tiêu cự cố định)" }
     ]}
   ],
-  "promos": ["Tặng bao da (demo)"],
-  "gallery": ["assets/img/tablet.png"],
+  "promos": ["Tặng bút cảm ứng Huawei M-Pencil (thế hệ 2)"],
+  "gallery": ["assets/img/tablet.png", "assets/img/tablet1.png", "assets/img/tablet2.png", "assets/img/tablet3.png", "assets/img/tablet4.png"],
   "stock": true,
   "rating": 4.3
 }
