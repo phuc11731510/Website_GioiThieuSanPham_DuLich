@@ -357,7 +357,7 @@ nav .nav-link {
   grid-template-columns: auto auto auto auto auto auto auto;
   text-decoration: none;
 }
-.swiper-wrapper a div {
+.swiper-wrapper div a {
   background-color: #ffc107;
   color: #000;
   margin: 10px 0;
@@ -366,7 +366,7 @@ nav .nav-link {
   margin-left: 30px;
   transition: 0.3s ease-in-out;
 }
-.swiper-wrapper a div:hover {
+.swiper-wrapper div a:hover {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
   transform: translateY(-4px);
   background-color: #fff;
