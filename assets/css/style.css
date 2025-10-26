@@ -337,7 +337,7 @@ textarea:focus {
   border-radius: 10px;
   padding: 10px;
   transition: 0.3s ease-in-out;
-  border: 1px solid #000;
+  border: 1px solid #6E8CFB;
 }
 .card-body div a:hover {
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
