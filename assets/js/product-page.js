@@ -254,6 +254,14 @@ function initDark() {
   };
 }
 
+function buy(){
+  Swal.fire({
+    icon : 'success',
+    title : 'Thành công',
+    text: 'Đặt hàng thành công'
+  })
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loadProducts()
     .then(() => initDark()) 
