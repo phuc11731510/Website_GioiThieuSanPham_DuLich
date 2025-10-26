@@ -25,6 +25,7 @@ function productCard(p) {
   const old = p.oldprice
     ? `<div class="p-oldprice" style="text-decoration: line-through; font-size: 14px;">${money(p.oldprice)}</div>`
     : '';
+    
   return `
     <div class="col-6 col-md-4 col-lg-3">
       <div class="p-card h-100">
@@ -33,12 +34,16 @@ function productCard(p) {
         </div>
         <div class="p-body">
           <h6 class="p-title">${p.title}</h6>
-          <div class="p-meta">Danh mục: ${p.cat}</div>
+          
+          <div class="p-meta">${p.cat}</div> 
+          
           <div class="p-price">${money(p.price)}</div>
           ${old}
           ${renderBadge(p.tags)}
           <div class="p-actions">
+
             <button class="btn btn-warning btn-sm" data-qv="${p.id}" data-bs-toggle="modal" data-bs-target="#quickView" style="color:#000">Xem</button>
+            
           </div>
         </div>
       </div>
