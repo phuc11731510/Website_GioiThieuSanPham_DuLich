@@ -273,7 +273,7 @@ nav .nav-link {
   border: 1.3px solid #000;
 }
 .row.g-4 {
-  margin: 50px;
+  margin: 0 50px;
 }
 select {
   border-radius: 15px;
@@ -326,6 +326,23 @@ textarea:focus {
 }
 #arrow:active {
   transform: scale(0.3);
+}
+.hero-post-sm .card-body {
+    flex-grow: 1; 
+}
+.card-body div a {
+  text-decoration: none;
+  color: #000;
+  background-color: #ffc107;
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.3s ease-in-out;
+  border: 1px solid #000;
+}
+.card-body div a:hover {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  background-color: transparent;
 }
 @media (max-width: 576px) {
   .qv-media { height: 240px; }
