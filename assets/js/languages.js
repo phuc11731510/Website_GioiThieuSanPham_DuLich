@@ -42,6 +42,8 @@ window.FOXEL_LANG_DATA = {
     footerTerms: 'Điều khoản',
     modalQuickView: 'Xem nhanh',
     modalViewDetail: 'Xem chi tiết',
+    watch: 'Xem',
+    cate: 'Danh mục:',
   },
   en: {
     topbarWelcome: 'Welcome to Foxel — Customers come first',
@@ -62,7 +64,7 @@ window.FOXEL_LANG_DATA = {
     catAccessory: '📱 Accessories',
     hero1Title: 'RTX 40 Series Gaming Laptops',
     hero1Desc: 'Top performance — up to 15% off.',
-    hero1Btn: 'Shop now',
+    hero1Btn: 'Buy now',
     hero2Title: 'Wireless Mechanical Keyboards',
     hero2Desc: '7-color LED — silent switches',
     hero2Btn: 'Discover',
@@ -86,5 +88,7 @@ window.FOXEL_LANG_DATA = {
     footerTerms: 'Terms & conditions',
     modalQuickView: 'Quick view',
     modalViewDetail: 'View details',
+    watch: 'Watch',
+    cate: 'Category:',
   },
 };
