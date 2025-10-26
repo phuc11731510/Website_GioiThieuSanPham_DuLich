@@ -17,7 +17,7 @@
   </head>
   <body class="theme-auto">
     <div class="topbar py-1 small text-bg-dark">
-      <div class="container d-flex justify-content-between align-items-center">
+      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
         <div data-lang-key="topbarWelcome">Chào mừng đến Foxel — Khách hàng là thượng đế</div>
         <div class="d-flex gap-3 align-items-center">
           <button id="btnDark" class="btn btn-sm btn-outline-light" data-lang-key="btnTheme">🌓 Chế độ tối</button>
@@ -26,37 +26,68 @@
       </div>
     </div>
     <header class="py-3 border-bottom">
-      <div class="container d-flex align-items-center justify-content-between">
-        <a class="navbar-brand fw-bold fs-3" href="index.html">
-            <img src="assets/img/fox.png" alt="fox" height="50px">
-        </a>
-        <h2 style="margin: 10px;">Foxel</h2>
-        <form class="search flex-grow-1 mx-3">
-          <div class="input-group">
-            <input class="form-control" placeholder="Bạn muốn tìm gì ?" data-lang-key="searchPlaceholder" />
-            <button class="btn btn-warning" type="button" data-lang-key="btnSearch" id="search">Tìm</button>
-          </div>
-        </form>
-        <nav class="d-none d-md-flex gap-3">
-          <a href="index.html" class="nav-link" data-lang-key="navHome">Trang chủ</a>
-          <a href="products.html" class="nav-link" data-lang-key="navProducts">Sản phẩm</a>
-          <a href="news.html" class="nav-link" data-lang-key="navNews">Tin tức</a>
-          <a href="contact.html" class="nav-link active" data-lang-key="navContact">Liên hệ</a>
-        </nav>
+  <div class="container d-flex align-items-center justify-content-between">
+    
+    <a class="navbar-brand fw-bold fs-3" href="index.html">
+      <img src="assets/img/fox.png" alt="fox" height="50px">
+    </a>
+    
+    <h2 style="margin: 10px;" class="d-none d-lg-block">Foxel</h2>
+    
+    <form class="search flex-grow-1 mx-3 d-none d-md-flex">
+      <div class="input-group">
+        <input class="form-control" placeholder="Bạn muốn tìm gì ?" data-lang-key="searchPlaceholder" />
+        <button class="btn btn-warning" type="button" data-lang-key="btnSearch" id="search">Tìm</button>
       </div>
-      <div class="mega border-top">
-        <div class="container d-flex gap-3 py-2 overflow-auto">
-          <a class="cat" href="#" data-lang-key="catLaptop">💻 Laptop</a>
-          <a class="cat" href="#" data-lang-key="catPC">🖥️ PC</a>
-          <a class="cat" href="#" data-lang-key="catKeyboard">⌨️ Bàn phím</a>
-          <a class="cat" href="#" data-lang-key="catMouse">🖱️ Chuột</a>
-          <a class="cat" href="#" data-lang-key="catHeadphone">🎧 Tai nghe</a>
-          <a class="cat" href="#" data-lang-key="catPrinter">🖨️ Máy in</a>
-          <a class="cat" href="#" data-lang-key="catComponent">⚙️ Linh kiện</a>
-          <a class="cat" href="#" data-lang-key="catAccessory">📱 Phụ kiện</a>
-        </div>
+    </form>
+    
+    <nav class="d-none d-md-flex gap-3 mt-4 mt-md-0">
+      <a href="index.html" class="nav-link" data-lang-key="navHome">Trang chủ</a>
+      <a href="products.html" class="nav-link" data-lang-key="navProducts">Sản phẩm</a>
+      <a href="news.html" class="nav-link" data-lang-key="navNews">Tin tức</a>
+      <a href="contact.html" class="nav-link active" data-lang-key="navContact">Liên hệ</a>
+    </nav>
+
+    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  
+  <div class="mega border-top">
+    <div class="container d-flex gap-3 py-2 overflow-auto">
+      <a class="cat" href="products.html" data-lang-key="catLaptop">💻 Laptop</a>
+      <a class="cat" href="products.html" data-lang-key="catPC">🖥️ PC</a>
+      <a class="cat" href="products.html" data-lang-key="catKeyboard">⌨️ Bàn phím</a>
+      <a class="cat" href="products.html" data-lang-key="catMouse">🖱️ Chuột</a>
+      <a class="cat" href="products.html" data-lang-key="catHeadphone">🎧 Tai nghe</a>
+      <a class="cat" href="products.html" data-lang-key="catPrinter">🖨️ Máy in</a>
+      <a class="cat" href="products.html" data-lang-key="catComponent">⚙️ Linh kiện</a>
+      <a class="cat" href="products.html" data-lang-key="catAccessory">📱 Phụ kiện</a>
+    </div>
+  </div>
+</header>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="mobileNavLabel">Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    
+    <form class="search d-flex mb-4">
+      <div class="input-group">
+        <input class="form-control" placeholder="Bạn muốn tìm gì ?" data-lang-key="searchPlaceholder" />
+        <button class="btn btn-warning" type="button" data-lang-key="btnSearch" id="search-mobile">Tìm</button>
       </div>
-    </header>
+    </form>
+    
+    <nav class="d-flex flex-column gap-3 mt-4 mt-md-0">
+      <a href="index.html" class="nav-link" data-lang-key="navHome">Trang chủ</a>
+      <a href="products.html" class="nav-link" data-lang-key="navProducts">Sản phẩm</a>
+      <a href="news.html" class="nav-link" data-lang-key="navNews">Tin tức</a>
+      <a href="contact.html" class="nav-link active" data-lang-key="navContact">Liên hệ</a>
+    </nav>
+  </div>
+</div>
 
     <main class="container my-4">
       <div class="row g-4">
