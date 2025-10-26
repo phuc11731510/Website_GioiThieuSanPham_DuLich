@@ -74,8 +74,8 @@ function createHeroController(heroEl, gallery, title) {
       img.alt = title;
       img.style.maxWidth = '100%';
       img.style.maxHeight = '100%';
-      img.style.width = 'auto';
-      img.style.height = 'auto';
+      img.style.width = '100%';
+      img.style.height = '100%';
       img.style.display = 'block';
       layer.appendChild(img);
     } else {
