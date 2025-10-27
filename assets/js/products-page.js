@@ -130,7 +130,7 @@ function initList() {
   const $grid = $('#grid-all');
   if (!$grid.length) return;
 
-  let limit = 8;
+  let limit = 6;
   const $cat = $('#catSelect');
   const $priceRange = $('#priceRange');
   const $priceLabel = $('#priceLabel');

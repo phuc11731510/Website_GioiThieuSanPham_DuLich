@@ -199,11 +199,11 @@ nav .nav-link {
   color: #000;
   background-color: #fff;
 }
-:root[data-bs-theme="dark"] .swiper-wrapper a div {
+:root[data-bs-theme="dark"] .swiper-wrapper div a {
   color: #fff;
   background-color: #dc3545;
 }
-:root[data-bs-theme="dark"] .swiper-wrapper a div:hover {
+:root[data-bs-theme="dark"] .swiper-wrapper div a:hover {
   background-color: #fff;
   color: #000;
   border: 1.3px solid #000;
