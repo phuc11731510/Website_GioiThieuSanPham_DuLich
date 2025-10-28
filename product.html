@@ -53,6 +53,19 @@
       <a href="news.html" class="nav-link" data-lang-key="navNews">Tin tức</a>
       <a href="contact.html" class="nav-link" data-lang-key="navContact">Liên hệ</a>
     </nav>
+
+    <a href="cart.html" class="btn btn-outline-dark position-relative ms-3" id="cart-button" aria-label="Giỏ hàng">
+      🛒
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count" style="display: none;">
+        0
+        <span class="visually-hidden">sản phẩm trong giỏ</span>
+      </span>
+    </a>
+
+    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
     <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -107,7 +120,7 @@
           <p class="lead mb-1" id="pPrice"></p>
           <p class="small text-muted">Đã gồm VAT</p>
           <div class="d-flex gap-2 mb-3">
-            <button class="btn btn-outline-secondary" onclick="buy()" id="buy">Đặt hàng</button>
+            <button class="btn btn-outline-secondary" onclick="buy()" id="buy" data-id="${product.id}">Đặt hàng</button>
           </div>
           <ul class="list-unstyled small spec" id="specList"></ul>
           <div class="card p-3 small d-none" id="promoCard">

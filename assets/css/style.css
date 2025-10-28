@@ -261,6 +261,11 @@ nav .nav-link {
   background-color: #212529;
   color: #fff;
 }
+:root[data-bs-theme="dark"] div #cart-button {
+  background-color: #dc3545 ;
+  color: #fff;
+  border: 1px solid #dc3545;
+}
 
 .thumb:hover { cursor: pointer; }
 /* Product cards */

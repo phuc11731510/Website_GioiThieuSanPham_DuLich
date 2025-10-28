@@ -1,4 +1,4 @@
-const productStore = { products: [] };
+﻿const productStore = { products: [] };
 const productIsAssetImage = (src) => typeof src === 'string' && src.startsWith('assets/');
 const productMoney = (n) => `${(n || 0).toLocaleString('vi-VN')}₫`;
 
@@ -258,3 +258,5 @@ $(function () {
 });
 
 window.buy = buy;
+
+
