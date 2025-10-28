@@ -1,4 +1,4 @@
-const listStore = { products: [] };
+const listStore = { products: [], cart: [] };
 const listIsAssetImage = (src) => typeof src === 'string' && src.startsWith('assets/');
 const listMoney = (n) => `${(n || 0).toLocaleString('vi-VN')}₫`;
 
@@ -41,6 +41,7 @@ function productCard(product) {
           ${renderBadge(product.tags)}
           <div class="p-actions">
             <button class="btn btn-warning btn-sm" data-qv="${product.id}" data-bs-toggle="modal" data-bs-target="#quickView" style="color:#000">Xem</button>
+            <button class="btn btn-primary btn-sm btn-add-cart" data-id="${product.id}">Thêm</button>
           </div>
         </div>
       </div>
@@ -208,6 +209,69 @@ function initBackToTopList() {
   $(window).on('scroll.productList', toggle);
   toggle();
 }
+function saveCart() {
+  try {
+    localStorage.setItem('cart', JSON.stringify(listStore.cart));
+  } catch (err) {
+    console.warn('Không thể lưu giỏ hàng.', err);
+  }
+}
+
+function loadCart() {
+  try {
+    const cartData = localStorage.getItem('cart');
+    listStore.cart = cartData ? JSON.parse(cartData) : [];
+  } catch (err) {
+    console.warn('Không thể tải giỏ hàng.', err);
+    listStore.cart = [];
+  }
+  updateCartCount(); 
+}
+function updateCartCount() {
+  const $cartCount = $('#cart-count');
+  if ($cartCount.length) {
+    const totalItems = listStore.cart.reduce((sum, item) => sum + item.quantity, 0);
+    $cartCount.text(totalItems);
+    $cartCount.toggle(totalItems > 0);
+  }
+}
+function addToCart(productId) {
+  const product = listStore.products.find(p => p.id === productId);
+  if (!product) return;
+  const existingItem = listStore.cart.find(item => item.id === productId);
+
+  if (existingItem) {
+    
+    existingItem.quantity += 1;
+  } else {
+    
+    listStore.cart.push({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      img: product.img,
+      quantity: 1
+    });
+  }
+  
+  saveCart(); 
+  updateCartCount(); 
+}
+
+
+function initCartEvents() {
+  $(document).on('click', '.btn-add-cart', function() {
+    const productId = Number($(this).data('id'));
+    if (productId) {
+      addToCart(productId);
+      const $btn = $(this);
+      $btn.text('Đã thêm!').prop('disabled', true);
+      setTimeout(() => {
+        $btn.text('Thêm').prop('disabled', false);
+      }, 1000);
+    }
+  });
+}
 
 $(function () {
   loadProductList().done(() => {
@@ -215,4 +279,8 @@ $(function () {
   });
   try { initListDark(); } catch (err) { console.warn(err); }
   try { initBackToTopList(); } catch (err) { console.warn(err); }
+  try { 
+    loadCart();
+    initCartEvents();
+  } catch (err) { console.warn(err); }
 });

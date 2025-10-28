@@ -1,4 +1,4 @@
-const store = { products: [] };
+const store = { products: [], cart: [] };
 const isAssetImage = (src) => typeof src === 'string' && src.startsWith('assets/');
 const money = (n) => `${(n || 0).toLocaleString('vi-VN')}₫`;
 
@@ -41,6 +41,8 @@ function productCard(product) {
           ${renderBadge(product.tags)}
           <div class="p-actions">
             <button class="btn btn-warning btn-sm" data-qv="${product.id}" data-bs-toggle="modal" data-bs-target="#quickView" style="color:#000">Xem</button>
+            <button class="btn btn-primary btn-sm btn-add-cart" data-id="${product.id}">Thêm</button>
+          </div>
           </div>
         </div>
       </div>
@@ -218,9 +220,78 @@ function initBackToTop() {
 }
 
 $(function () {
-  loadProducts().done(() => {
-    try { initHome(); } catch (err) { console.warn(err); }
-  });
-  try { initDark(); } catch (err) { console.warn(err); }
-  try { initBackToTop(); } catch (err) { console.warn(err); }
+  loadProducts().done(() => {
+    try { initHome(); } catch (err) { console.warn(err); }
+  });
+  try { initDark(); } catch (err) { console.warn(err); }
+  try { initBackToTop(); } catch (err) { console.warn(err); }
+
+  try { 
+    loadCart();
+    initCartEvents();
+  } catch (err) { console.warn(err); }
 });
+
+function saveCart() {
+  try {
+    localStorage.setItem('cart', JSON.stringify(store.cart));
+  } catch (err) {
+    console.warn('Không thể lưu giỏ hàng.', err);
+  }
+}
+
+function loadCart() {
+  try {
+    const cartData = localStorage.getItem('cart');
+    store.cart = cartData ? JSON.parse(cartData) : [];
+  } catch (err) {
+    console.warn('Không thể tải giỏ hàng.', err);
+    store.cart = [];
+  }
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const $cartCount = $('#cart-count');
+  if ($cartCount.length) {
+    const totalItems = store.cart.reduce((sum, item) => sum + item.quantity, 0);
+    $cartCount.text(totalItems);
+    $cartCount.toggle(totalItems > 0);
+  }
+}
+
+function addToCart(productId) {
+  const product = store.products.find(p => p.id === productId);
+  if (!product) return;
+  const existingItem = store.cart.find(item => item.id === productId);
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    store.cart.push({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      img: product.img,
+      quantity: 1
+    });
+  }
+  saveCart(); 
+  updateCartCount();
+}
+
+
+function initCartEvents() {
+  $(document).on('click', '.btn-add-cart', function() {
+    const productId = Number($(this).data('id'));
+    if (productId) {
+      addToCart(productId);
+      const $btn = $(this);
+      $btn.text('Đã thêm!').prop('disabled', true);
+      setTimeout(() => {
+        $btn.text('Thêm').prop('disabled', false);
+      }, 1000);
+    }
+  });
+}
+
